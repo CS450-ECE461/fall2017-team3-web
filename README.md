@@ -21,6 +21,33 @@ The following is an outline of the steps we'll need to take to collaborate seaml
 1. As we move on, the software will become more complete. Once the codebase on `develop` is ready to be staged, we will merge it to `release`. Here, we have a chance to make sure it is ready for prime time.
 2. Only once we are certain it is ready, the code is merged to `master`. `master` will always contain only stable code
 
+### Git refresher
+These are some of the git commands you'll use a lot. They are listed here for reference.
+
+`git clone <repourl>`  
+clone a remote repository (like this one) to your local
+
+`git pull`  
+Move to the latest commit of the current branch
+
+`git branch`  
+view all the branches on your local
+
+`git branch <branchname>`  
+create a new branch. Note that you are NOT automatically switched to that branch
+
+`git checkout <branchname>`  
+Checkout an existing branch
+
+`git fetch` `git merge`  
+This sequence will update your current branch and pull down any other branches from the remote repository
+
+`git stash`  
+Place ALL of the changes since your last commit onto a stack. This is a great way of undoing a bunch of changes
+
+`git stash pop`  
+pops changes back off the stack. This is a great way of redoing all those things you just un-did with git stash
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
