@@ -22,7 +22,7 @@ The following is an outline of the steps we'll need to take to collaborate seaml
 2. Only once we are certain it is ready, the code is merged to `master`. `master` will always contain only stable code
 
 ### Git refresher
-These are some of the git commands you'll use a lot. They are listed here for reference.
+These are some of the git commands you'll use a lot. They are listed here for reference. If you'd like to get more comfortable with Git, check out this guide from Atlassian: https://www.atlassian.com/git/tutorials
 
 `git clone <repourl>`  
 clone a remote repository (like this one) to your local
