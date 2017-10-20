@@ -1,7 +1,25 @@
 # frontend-app
 
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+
+## Git Flow
+
+The following is an outline of the steps we'll need to take to collaborate seamlessly on the project.
+
+### Contributing
+1. We will have 3 main branches: `develop`, `release`, and `master`.
+2. When you go to add a feature, branch off of the latest `develop`. A good convention to use would be firstnameinit.feature-description. For example, George Boole might create a branch named `georgeb.login-styling-fix`
+3. After you have finished that feature, create a pull request. After tagging the PR apropriately, choose one or more reviewers who know that part of the system well. Wait for their approval before merging the PR. If they have comments or merge conflicts, address those first and wait for approval. If you are addressing a specific issue, #reference that issue in the PR description
+4. After merging and confirming, close any issues that the branch fixes.
+
+### Issues
+1. As we find bugs or identify new features, we'll create issues.
+2. When you create an issue, apply the appropriate tags to it.
+3. To take responsibility for fixing an issue, assign it to yourself before beginning work on it.
+
+### Releasing
+1. As we move on, the software will become more complete. Once the codebase on `develop` is ready to be staged, we will merge it to `release`. Here, we have a chance to make sure it is ready for prime time.
+2. Only once we are certain it is ready, the code is merged to `master`. `master` will always contain only stable code
 
 ## Prerequisites
 
@@ -36,10 +54,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
