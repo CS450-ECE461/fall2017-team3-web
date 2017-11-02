@@ -1,3 +1,4 @@
+![image](https://travis-ci.org/CS450-ECE461/fall2017-team3-web.svg?branch=master)
 # frontend-app
 
 This README outlines the details of collaborating on this Ember application.
