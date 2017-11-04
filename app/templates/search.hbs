@@ -1,0 +1,36 @@
+<div>
+    <h5>Search by Skills or Projects</h5>
+</div>
+
+{{#list-filter
+    filter=(action 'filterBySkill')
+    as |users|}}
+    <ul>
+      {{#each users as |user|}}
+        <article>
+          <div>
+            <img src="{{user.image}}" style="width: 40px; height: 40px; border-radius: 50%; display: inline-block">
+            <ul style="vertical-align: text-top">{{user.name}}</ul>
+          </div>
+
+          <div>
+            <span>Skills:</span>{{user.skills}}
+          </div>
+        </article>
+      {{/each}}
+    </ul>
+    {{/list-filter}}
+{{!--
+{{#each model as |user|}}
+  <article>
+    <div>
+      <img src="{{user.image}}" style="width: 40px; height: 40px; border-radius: 50%; display: inline-block">
+      <ul style="vertical-align: text-top">{{user.name}}</ul>
+    </div>
+
+    <div>
+      <span>Skills:</span>{{user.skills}}
+    </div>
+  </article>
+{{/each}}
+--}}
