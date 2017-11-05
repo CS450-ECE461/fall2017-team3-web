@@ -31,9 +31,9 @@ export default function() {
       }];
 
   this.get('/users', function(db, request) {
-    if(request.queryParams.name !== undefined) {
+    if(request.queryParams.skills !== undefined) {
       let filteredUsers = users.filter(function(i) {
-        return i.attributes.name.toLowerCase().indexOf(request.queryParams.name.toLowerCase()) !== -1;
+        return i.attributes.skills.toString().toLowerCase().indexOf(request.queryParams.skills.toString().toLowerCase()) !== -1;
       });
       return { data: filteredUsers };
     } else {
