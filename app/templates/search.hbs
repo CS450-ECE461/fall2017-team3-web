@@ -1,10 +1,33 @@
-<div>
-    <h5>Search by Skills or Projects</h5>
-</div>
-
+{{x-toggle showLabels=true
+           offLabel="SKILLS"
+           onLabel="PROJECTS"
+           value=myValue onToggle=(action (mut myValue))}}
+{{#if myValue}}
 {{#list-filter
-    filter=(action 'filterBySkill')
-    as |users|}}
+    filter=(action 'filterByProject')
+    as |projects|}}
+    <div>
+      {{#each projects as |project|}}
+        <article>
+          <div style="display: inline-block">
+            <em style="text-align: center">{{project.name}}</em>
+            <div>
+              {{project.description}}
+            </div>
+          </div>
+
+          <div>
+            <span>Skills Required:</span>{{project.skills}}
+          </div>
+
+        </article>
+      {{/each}}
+    </div>
+{{/list-filter}}
+{{else}}
+  {{#list-filter
+      filter=(action 'filterBySkill')
+  as |users|}}
     <div>
       {{#each users as |user|}}
         <article>
@@ -23,4 +46,5 @@
         </article>
       {{/each}}
     </div>
-    {{/list-filter}}
+  {{/list-filter}}
+{{/if}}

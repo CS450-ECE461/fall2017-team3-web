@@ -33,6 +33,50 @@ export default function() {
         }
       }];
 
+  let projects = [{
+    type: 'project',
+    id: 'project-1',
+    attributes: {
+      name: 'Messaging App',
+      description: 'creating a messaging app to beat Whatsapp',
+      skills: ['web design', 'web development', 'software testing'],
+      owner: 'Owner One',
+      status: 'active'
+    }
+  }, {
+    type: 'project',
+    id: 'project-2',
+    attributes: {
+      name: 'Building a Shed',
+      description: 'building an awesome shed out of plastic',
+      skills: ['construction', 'Land Surveying'],
+      owner: 'Owner Two',
+      status: 'active'
+    }
+  }, {
+    type: 'project',
+    id: 'project-3',
+    attributes: {
+      name: 'catering event',
+      description: 'provide awesome food to an awesome event',
+      skills: ['cooking', 'baking'],
+      owner: 'Owner Three',
+      status: 'inactive'
+    }
+  }];
+
+
+  this.get('/projects', function(db, request) {
+    if(request.queryParams.skills !== undefined) {
+      let filteredProjects = projects.filter(function(i) {
+        return i.attributes.skills.toString().toLowerCase().indexOf(request.queryParams.skills.toString().toLowerCase()) !== -1;
+      });
+      return { data: filteredProjects };
+    } else {
+      return { data: projects};
+    }
+  });
+
   this.get('/users', function(db, request) {
     if(request.queryParams.skills !== undefined) {
       let filteredUsers = users.filter(function(i) {

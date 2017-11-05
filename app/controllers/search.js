@@ -8,6 +8,14 @@ export default Ember.Controller.extend({
       } else {
         return this.get('store').query('user', {skills: 'undefined'});
       }
+    },
+
+    filterByProject(param) {
+      if (param !== '') {
+        return this.get('store').query('project', {skills: param});
+      } else {
+        return this.get('store').query('project', {skills: 'undefined'});
+      }
     }
   }
 });
