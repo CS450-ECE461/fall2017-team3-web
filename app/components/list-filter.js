@@ -6,7 +6,6 @@ export default Ember.Component.extend({
 
   init() {
     this._super(...arguments);
-    this.get('filter')('').then((results) => this.set('results', results));
   },
 
   actions: {

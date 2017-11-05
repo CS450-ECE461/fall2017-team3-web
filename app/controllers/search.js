@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       if (param !== '') {
         return this.get('store').query('user', { name: param });
       } else {
-        return this.get('store').findAll('user');
+        return this.get('store').query('user', {name: 'UNDEFINED'});
       }
     }
   }
