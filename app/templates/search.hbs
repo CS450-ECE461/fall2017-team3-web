@@ -5,32 +5,22 @@
 {{#list-filter
     filter=(action 'filterBySkill')
     as |users|}}
-    <ul>
+    <div>
       {{#each users as |user|}}
         <article>
-          <div>
-            <img src="{{user.image}}" style="width: 40px; height: 40px; border-radius: 50%; display: inline-block">
-            <ul style="vertical-align: text-top">{{user.name}}</ul>
+          <div style="display: inline-block">
+            <img src="{{user.image}}" style="width: 40px; height: 40px; border-radius: 50%;" align="middle">
+            <em style="text-align: center">{{user.name}}</em>
+            <div>
+              {{star-rating user.rating}}
+            </div>
           </div>
 
           <div>
             <span>Skills:</span>{{user.skills}}
           </div>
+
         </article>
       {{/each}}
-    </ul>
+    </div>
     {{/list-filter}}
-{{!--
-{{#each model as |user|}}
-  <article>
-    <div>
-      <img src="{{user.image}}" style="width: 40px; height: 40px; border-radius: 50%; display: inline-block">
-      <ul style="vertical-align: text-top">{{user.name}}</ul>
-    </div>
-
-    <div>
-      <span>Skills:</span>{{user.skills}}
-    </div>
-  </article>
-{{/each}}
---}}
