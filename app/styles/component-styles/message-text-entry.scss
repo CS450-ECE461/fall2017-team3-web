@@ -1,0 +1,27 @@
+.backing-box {
+  width: 100vw;
+  background-color: #21172D;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .edit-text {
+    height: 25px;
+    width: 80%;
+    outline: none;
+  }
+
+  .send-message {
+    background-color: #EE4640;
+    border: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    outline: none;
+  }
+
+  .edit-text, .send-message {
+    margin: 20px;
+  }
+}

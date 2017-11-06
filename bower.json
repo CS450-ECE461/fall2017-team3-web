@@ -1,0 +1,20 @@
+{
+  "name": "frontend-app",
+  "description": "Small description for frontend-app goes here",
+  "main": "",
+  "authors": [
+    "Amos Endersen <amenders@iupui.edu>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/CS450-ECE461/fall2017-team3-web",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+
+  }
+}
