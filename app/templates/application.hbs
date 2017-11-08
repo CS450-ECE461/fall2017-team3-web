@@ -1,5 +1,28 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<style>
+	ul {
+    list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+  	background-color: #333;
+} 
+
+	li {
+	  display: block;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+}
+
+	li a:hover {
+  	background-color: #111;
+}
+</style>
+
+<ul>
+	<li>{{#link-to 'sign-in' class="button"}}sign-in{{/link-to}}</li>
+	<li>{{#link-to 'profile' class="button"}}profile{{/link-to}}</li>
+</ul>
 
 {{outlet}}
