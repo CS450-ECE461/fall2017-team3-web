@@ -10,12 +10,11 @@
       {{#each projects as |project|}}
         <article>
           <div style="display: inline-block">
-            <em style="text-align: center">{{project.name}}</em>
+            <em style="text-align: center">{{#link-to "search.project" project}}{{project.name}}{{/link-to}}</em>
             <div>
               {{project.description}}
             </div>
           </div>
-
           <div>
             <span>Skills Required:</span>{{project.skills}}
           </div>

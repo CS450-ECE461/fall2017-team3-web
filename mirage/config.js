@@ -7,7 +7,7 @@ export default function() {
         attributes: {
           name: 'User One',
           rating: 3.5,
-          skills: ['Photography', 'design'],
+          skills: ['Photography', 'Adobe Design Suite', 'Painting'],
           email: 'user_one@example.com',
           image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg'
         }
@@ -17,7 +17,7 @@ export default function() {
         attributes: {
           name: 'User Two',
           rating: 5.0,
-          skills: ['design', 'CAD'],
+          skills: ['Landscaping', 'Plumbing', 'Hanging out while doing the above'],
           email: 'user_two@example.com',
           image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg'
         }
@@ -27,21 +27,32 @@ export default function() {
         attributes: {
           name: 'User Three',
           rating: 1.2,
-          skills: ['cooking', 'construction', 'Land Surveys'],
+          skills: ['roofing', 'construction', 'surveying'],
           email: 'user_three@example.com',
           image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg'
         }
-      }];
+      }, {
+         type: 'user',
+         id: 'user-four',
+         attributes: {
+           name: 'User Three',
+           rating: 1.2,
+           skills: ['sleeping', 'eating', 'Private Affairs'],
+           email: 'user_three@example.com',
+           image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg'
+    }
+  }];
 
   let projects = [{
     type: 'project',
     id: 'project-1',
     attributes: {
       name: 'Messaging App',
-      description: 'creating a messaging app to beat Whatsapp',
+      description: 'creating a messaging app to beat WhatsApp',
       skills: ['web design', 'web development', 'software testing'],
       owner: 'Owner One',
-      status: 'active'
+      status: 'active',
+      contributors: [users[0],users[1]]
     }
   }, {
     type: 'project',
@@ -51,7 +62,8 @@ export default function() {
       description: 'building an awesome shed out of plastic',
       skills: ['construction', 'Land Surveying'],
       owner: 'Owner Two',
-      status: 'active'
+      status: 'active',
+      contributors: []
     }
   }, {
     type: 'project',
@@ -61,7 +73,8 @@ export default function() {
       description: 'provide awesome food to an awesome event',
       skills: ['cooking', 'baking'],
       owner: 'Owner Three',
-      status: 'inactive'
+      status: 'inactive',
+      contributors: [users[4], users[2]]
     }
   }];
 
@@ -89,11 +102,10 @@ export default function() {
   });
 
   this.get('/users/:id', function (db, request) {
-    return { data: users.find((users) => request.params.id === users.id) };
+    return { data: users.find((user) => request.params.id === user.id) };
   });
 
   this.get('/projects/:id', function (db, request) {
-    return { data: users.find((projects) => request.params.id === projects.id)}
+    return { data: projects.find((project) => request.params.id === project.id) };
   });
 }
-
