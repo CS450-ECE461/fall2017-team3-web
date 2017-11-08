@@ -87,4 +87,13 @@ export default function() {
       return { data: users };
     }
   });
+
+  this.get('/users/:id', function (db, request) {
+    return { data: users.find((users) => request.params.id === users.id) };
+  });
+
+  this.get('/projects/:id', function (db, request) {
+    return { data: users.find((projects) => request.params.id === projects.id)}
+  });
 }
+
