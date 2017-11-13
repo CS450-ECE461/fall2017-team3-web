@@ -1,0 +1,23 @@
+<div>
+  <img src="{{model.image}}" style="width: 100px; height: 100px;" align="middle">
+  <h2>{{model.name}}</h2>
+  {{star-rating (calc-rating model.rating)}}
+  <div>
+    <strong>Skills:</strong>
+    <p>
+      {{#each model.skills as |skill|}}
+      <li>{{skill}}</li>
+      {{/each}}
+    </p>
+  </div>
+  <div>
+    <strong>Email:</strong>
+    {{model.email}}
+  </div>
+  <div>
+    <strong>Contributes to projects:</strong>
+    {{#each model.projects as |project|}}
+      <li>{{#link-to "search.project" project}}{{project}}{{/link-to}}</li>
+    {{/each}}
+  </div>
+</div>
