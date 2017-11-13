@@ -1,4 +1,5 @@
 <div>
+  <img src="{{model.image}}" style="width: 100px; height: 100px;" align="middle">
   <div>
     <h2>{{model.name}}</h2>
     <h3 style=" display: inline">Proud owner:</h3>
@@ -22,7 +23,7 @@
   <div>
     <strong>Contributors:</strong>
     {{#each model.contributors as |member|}}
-      <li>{{#link-to "search.profile" member}}{{member.attributes.name}}{{/link-to}}</li>
+      <li>{{#link-to "search.profile" member}}{{member}}{{/link-to}}</li>
     {{/each}}
   </div>
 </div>

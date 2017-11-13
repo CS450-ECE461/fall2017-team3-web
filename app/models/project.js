@@ -6,5 +6,6 @@ export default DS.Model.extend({
   skills: DS.attr(),
   owner : DS.attr(),
   status: DS.attr(),
-  contributors: DS.attr()
+  contributors: DS.attr(),
+  image: DS.attr()
 });

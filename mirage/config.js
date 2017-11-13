@@ -3,78 +3,85 @@ export default function() {
 
   let users = [{
         type: 'user',
-        id: 'user-one',
+        id: 'user_one@example.com',
         attributes: {
           name: 'User One',
           rating: 3.5,
           skills: ['Photography', 'Adobe Design Suite', 'Painting'],
           email: 'user_one@example.com',
-          image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg'
+          image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+          projects: ['project_1','project_3']
         }
       }, {
         type: 'user',
-        id: 'user-two',
+        id: 'user_two@example.com',
         attributes: {
           name: 'User Two',
           rating: 5.0,
           skills: ['Landscaping', 'Plumbing', 'Hanging out while doing the above'],
           email: 'user_two@example.com',
-          image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg'
+          image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg',
+          projects: ['project_1','project_2']
         }
       }, {
         type: 'user',
-        id: 'user-three',
+        id: 'user_three@example.com',
         attributes: {
           name: 'User Three',
           rating: 1.2,
           skills: ['roofing', 'construction', 'surveying'],
           email: 'user_three@example.com',
-          image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg'
+          image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg',
+          projects: ['project_1','project_2']
         }
       }, {
          type: 'user',
-         id: 'user-four',
+         id: 'user_four@example.com',
          attributes: {
            name: 'User Three',
            rating: 1.2,
            skills: ['sleeping', 'eating', 'Private Affairs'],
-           email: 'user_three@example.com',
-           image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg'
+           email: 'user_four@example.com',
+           image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg',
+           projects: ['project_3','project_2']
     }
   }];
 
   let projects = [{
     type: 'project',
-    id: 'project-1',
+    id: 'project_1',
     attributes: {
       name: 'Messaging App',
       description: 'creating a messaging app to beat WhatsApp',
       skills: ['web design', 'web development', 'software testing'],
       owner: 'Owner One',
       status: 'active',
-      contributors: [users[0],users[1]]
+      contributors: ['user_two@example.com','user_one@example.com'],
+      image: 'http://lorempixel.com/400/200'
     }
   }, {
     type: 'project',
-    id: 'project-2',
+    id: 'project_2',
     attributes: {
       name: 'Building a Shed',
       description: 'building an awesome shed out of plastic',
       skills: ['construction', 'Land Surveying'],
       owner: 'Owner Two',
       status: 'active',
-      contributors: []
+      contributors: ['user_three@example.com','user_one@example.com'],
+      image: 'http://lorempixel.com/400/200'
     }
   }, {
     type: 'project',
-    id: 'project-3',
+    id: 'project_3',
     attributes: {
       name: 'catering event',
       description: 'provide awesome food to an awesome event',
       skills: ['cooking', 'baking'],
       owner: 'Owner Three',
       status: 'inactive',
-      contributors: [users[4], users[2]]
+      contributors: ['user_three@example.com'],
+      image: 'http://lorempixel.com/400/200'
     }
   }];
 
