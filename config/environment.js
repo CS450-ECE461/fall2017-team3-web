@@ -24,6 +24,12 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    'ember-cli-google': {
+      recaptcha: {
+        siteKey: '6LeOYjgUAAAAANY85SPKKE8QhXWBfzRFKk0KsFRe'
+      }
+    },
+
     gatekeeper: {
       baseUrl: 'http://localhost:5000',
       startRoute: 'profile',
