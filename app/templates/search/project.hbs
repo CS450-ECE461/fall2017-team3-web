@@ -22,7 +22,7 @@
   </div>
   <div>
     <strong>Contributors:</strong>
-    {{#each model.contributors as |member|}}
+    {{#each model.collaborators as |member|}}
       <li>{{#link-to "search.profile" member}}{{member}}{{/link-to}}</li>
     {{/each}}
   </div>

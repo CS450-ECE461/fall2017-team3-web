@@ -6,7 +6,7 @@ export default function() {
         id: 'user_one@example.com',
         attributes: {
           name: 'User One',
-          rating: 3.5,
+          rating: [3.5, 5],
           skills: ['Photography', 'Adobe Design Suite', 'Painting'],
           email: 'user_one@example.com',
           image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
@@ -17,7 +17,7 @@ export default function() {
         id: 'user_two@example.com',
         attributes: {
           name: 'User Two',
-          rating: 5.0,
+          rating: [5.0, 4.5, 3.5],
           skills: ['Landscaping', 'Plumbing', 'Hanging out while doing the above'],
           email: 'user_two@example.com',
           image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg',
@@ -28,7 +28,7 @@ export default function() {
         id: 'user_three@example.com',
         attributes: {
           name: 'User Three',
-          rating: 1.2,
+          rating: [1.2, 5],
           skills: ['roofing', 'construction', 'surveying'],
           email: 'user_three@example.com',
           image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg',
@@ -38,8 +38,8 @@ export default function() {
          type: 'user',
          id: 'user_four@example.com',
          attributes: {
-           name: 'User Three',
-           rating: 1.2,
+           name: 'User Four',
+           rating: [3, 1.5],
            skills: ['sleeping', 'eating', 'Private Affairs'],
            email: 'user_four@example.com',
            image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg',
@@ -56,7 +56,7 @@ export default function() {
       skills: ['web design', 'web development', 'software testing'],
       owner: 'Owner One',
       status: 'active',
-      contributors: ['user_two@example.com','user_one@example.com'],
+      collaborators: ['user_two@example.com','user_one@example.com'],
       image: 'http://lorempixel.com/400/200'
     }
   }, {
@@ -68,7 +68,7 @@ export default function() {
       skills: ['construction', 'Land Surveying'],
       owner: 'Owner Two',
       status: 'active',
-      contributors: ['user_three@example.com','user_one@example.com'],
+      collaborators: ['user_three@example.com','user_one@example.com'],
       image: 'http://lorempixel.com/400/200'
     }
   }, {
@@ -80,7 +80,7 @@ export default function() {
       skills: ['cooking', 'baking'],
       owner: 'Owner Three',
       status: 'inactive',
-      contributors: ['user_three@example.com'],
+      collaborators: ['user_three@example.com'],
       image: 'http://lorempixel.com/400/200'
     }
   }];

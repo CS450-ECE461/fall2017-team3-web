@@ -34,7 +34,7 @@
             <img src="{{user.image}}" style="width: 40px; height: 40px; border-radius: 50%;" align="middle">
             <em style="text-align: center">{{#link-to "search.profile" user}}{{user.name}}{{/link-to}}</em>
             <div>
-              {{star-rating user.rating}}
+              {{star-rating (calc-rating user.rating)}}
             </div>
           </div>
 
