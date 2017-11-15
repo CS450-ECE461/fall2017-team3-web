@@ -1,11 +1,12 @@
 import Ember from 'ember';
 
 export function calcRating(params) {
-  var sum = 0;
+  let sum = 0;
+  let i = 0;
 
-  params[0].forEach(function(unit) {
-    sum+=unit;
-  });
-  return (sum / (params[0].length));
+  for(i = 0; i < params[0].length; i++) {
+    sum+=params[0][i];
+  }
+  return sum/params[0].length;
 }
 export default Ember.Helper.helper(calcRating);
