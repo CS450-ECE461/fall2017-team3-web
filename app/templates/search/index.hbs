@@ -1,7 +1,3 @@
-{{x-toggle showLabels=true
-           offLabel="USERS"
-           onLabel="PROJECTS"
-           value=myValue onToggle=(action (mut myValue))}}
 {{#if myValue}}
   {{#list-filter
       filter=(action 'filterByProject')
@@ -47,4 +43,10 @@
     </div>
   {{/list-filter}}
 {{/if}}
+{{x-toggle
+           offLabel="USERS"
+           onLabel="PROJECTS"
+           value=myValue onToggle=(action (mut myValue))
+          theme="flip"
+          size="large"}}
 {{outlet}}
