@@ -1,0 +1,29 @@
+<div>
+  <img src="{{model.image}}" style="width: 100px; height: 100px;" align="middle">
+  <div>
+    <h2>{{model.name}}</h2>
+    <h3 style=" display: inline">Proud owner:</h3>
+    {{model.owner}}
+  </div>
+  <div>
+    <h4> About this project</h4>
+    <p>{{model.description}}</p>
+  </div>
+  <div>
+    <strong>Skills required:</strong>
+    <p>{{#each model.skills as |skill|}}
+     <li>{{skill}}</li>
+      {{/each}}
+    </p>
+  </div>
+  <div>
+    <strong style="display: inline;">Project Status:</strong>
+    {{model.status}}
+  </div>
+  <div>
+    <strong>Contributors:</strong>
+    {{#each model.collaborators as |member|}}
+      <li>{{#link-to "search.profile" member}}{{member}}{{/link-to}}</li>
+    {{/each}}
+  </div>
+</div>
