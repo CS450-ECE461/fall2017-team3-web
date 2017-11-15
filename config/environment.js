@@ -36,7 +36,7 @@ module.exports = function(environment) {
       signInRoute: 'sign-in',
 
       tokenOptions: {
-        client_id: '59ee923e1fd71c2ae68ade62',
+        client_id: 'dummy',
         client_secret: '1234567890'
       }
     }
