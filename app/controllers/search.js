@@ -2,19 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    filterBySkill(param) {
+    search(param, type) {
       if (param !== '') {
-        return this.get('store').query('user', {skills: param });
+        this.set("results", this.get('store').query(type, {skills: param }));
       } else {
-        return this.get('store').query('user', {skills: 'undefined'});
-      }
-    },
-
-    filterByProject(param) {
-      if (param !== '') {
-        return this.get('store').query('project', {skills: param});
-      } else {
-        return this.get('store').query('project', {skills: 'undefined'});
+        this.set("results", this.get('store').query(type, {skills: 'undefined'}));
       }
     }
   }

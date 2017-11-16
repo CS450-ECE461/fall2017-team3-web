@@ -1,41 +1,29 @@
-{{material-design-icon name='search' class="search-icon"}}
-{{#if myValue}}
-  {{#list-filter
-      filter=(action 'filterByProject')
-  as |projects|}}
-    <div>
-      {{#each projects as |project|}}
-        {{#search-result
-          isUser = false
-          page = project
-          name = project.name
-          description = project.description
-          skills = project.skills}}
-          {{/search-result}}
-      {{/each}}
-    </div>
-  {{/list-filter}}
-{{else}}
-  {{#list-filter
-      filter=(action 'filterBySkill')
-  as |users|}}
-    <div>
-      {{#each users as |user|}}
-        {{#search-result
-          isUser = true
-          page = user
-          name = user.name
-          rating=user.rating
-          skills = user.skills}}
-        {{/search-result}}
-      {{/each}}
-    </div>
-  {{/list-filter}}
-{{/if}}
+{{material-design-icon
+  name='search'
+  class="search-icon"}}
+
+{{input
+  autofocus = true
+  placeholder = "Search by skills"
+  class = "search-text"
+  value=searchParam
+  key-up = (action "search" searchParam (if toggleValue "project" "user"))}}
+
+{{#each results as |result|}}
+  {{#search-result
+    isUser = false
+    page = result
+    name = result.name
+    description = result.description
+    skills = result.skills}}
+  {{/search-result}}
+{{/each}}
+
 {{x-toggle
-           offLabel="USERS"
-           onLabel="PROJECTS"
-           value=myValue onToggle=(action (mut myValue))
-           theme="flip"
-           size="large"}}
+  offLabel = "USERS"
+  onLabel = "PROJECTS"
+  value = toggleValue
+  onToggle = (action (mut toggleValue))
+  theme = "skewed"
+  size = "medium"}}
 {{outlet}}
