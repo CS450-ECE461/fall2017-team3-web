@@ -5,6 +5,7 @@ export default Controller.extend ({
     signOut () {
       this.get ('gatekeeper').signOut ().then (() => {
         this.replaceRoute ('sign-in');
+        alert('You have signed out');
       });
     }
   }
