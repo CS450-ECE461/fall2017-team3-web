@@ -11,9 +11,10 @@
 
 {{#each results as |result|}}
   {{#search-result
-    isUser = false
+    isUser = (if toggleValue false true)
     page = result
     name = result.name
+    rating = result.rating
     description = result.description
     skills = result.skills}}
   {{/search-result}}
