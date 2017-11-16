@@ -16,6 +16,6 @@ export default Ember.Controller.extend({
       } else {
         return this.get('store').query('project', {skills: 'undefined'});
       }
-    }
+    },
   }
 });
