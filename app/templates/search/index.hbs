@@ -1,21 +1,17 @@
+{{material-design-icon name='search' class="search-icon"}}
 {{#if myValue}}
   {{#list-filter
       filter=(action 'filterByProject')
   as |projects|}}
     <div>
       {{#each projects as |project|}}
-        <article>
-          <div style="display: inline-block">
-            <em style="text-align: center">{{#link-to "search.project" project}}{{project.name}}{{/link-to}}</em>
-            <div>
-              {{project.description}}
-            </div>
-          </div>
-          <div>
-            <span>Skills Required:</span>{{project.skills}}
-          </div>
-
-        </article>
+        {{#search-result
+          isUser = false
+          page = project
+          name = project.name
+          description = project.description
+          skills = project.skills}}
+          {{/search-result}}
       {{/each}}
     </div>
   {{/list-filter}}
@@ -25,20 +21,13 @@
   as |users|}}
     <div>
       {{#each users as |user|}}
-        <article>
-          <div style="display: inline-block">
-            <img src="{{user.image}}" style="width: 40px; height: 40px; border-radius: 50%;" align="middle">
-            <em style="text-align: center">{{#link-to "search.profile" user}}{{user.name}}{{/link-to}}</em>
-            <div>
-              {{star-rating (calc-rating user.rating)}}
-            </div>
-          </div>
-
-          <div>
-            <span>Skills:</span>{{user.skills}}
-          </div>
-
-        </article>
+        {{#search-result
+          isUser = true
+          page = user
+          name = user.name
+          rating=user.rating
+          skills = user.skills}}
+        {{/search-result}}
       {{/each}}
     </div>
   {{/list-filter}}
@@ -47,6 +36,6 @@
            offLabel="USERS"
            onLabel="PROJECTS"
            value=myValue onToggle=(action (mut myValue))
-          theme="flip"
-          size="large"}}
+           theme="flip"
+           size="large"}}
 {{outlet}}

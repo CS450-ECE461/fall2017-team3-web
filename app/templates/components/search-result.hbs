@@ -1,0 +1,22 @@
+<article class="search-result">
+  {{#link-to (if isUser "search.profile" "search.project") page}}
+
+    <div class="result-name">
+      {{name}}
+    </div>
+
+  {{#if isUser}}
+    {{star-rating (calc-rating rating)}}
+  {{else}}
+    <div class="result-description">
+      {{description}}
+    </div>
+  {{/if}}
+
+    <div class="result-skills">
+      Skills: {{skills}}
+    </div>
+
+  {{/link-to}}
+
+</article>

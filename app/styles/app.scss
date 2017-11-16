@@ -13,6 +13,11 @@ html, body {
   border: none;
   -webkit-appearance: none;
   outline: none;
-  margin-left: 40px;
-  margin-top: 10px;
+  display: inline;
+}
+
+.search-icon {
+  display: inline;
+  color: #DD4340;
+  font-size: 40px;
 }
