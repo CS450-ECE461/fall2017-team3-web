@@ -8,10 +8,17 @@ moduleForComponent('calc-rating', 'helper:calc-rating', {
 
 // Replace this with your real tests.
 test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+  this.set('inputValue', [1,2]);
 
   this.render(hbs`{{calc-rating inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '1234');
+  assert.equal(this.$().text().trim(), 1.5);
 });
 
+test('it renders', function(assert) {
+  this.set('inputValue', [1,2,3,4,5]);
+
+  this.render(hbs`{{calc-rating inputValue}}`);
+
+  assert.equal(this.$().text().trim(), 3);
+});
