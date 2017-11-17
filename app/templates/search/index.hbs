@@ -1,13 +1,15 @@
-{{material-design-icon
-  name='search'
-  class="search-icon"}}
+<div class="search-header">
+  {{material-design-icon
+    name='search'
+    class="search-icon"}}
 
-{{input
-  autofocus = true
-  placeholder = "Search by skills"
-  class = "search-text"
-  value=searchParam
-  key-up = (action "search" searchParam (if toggleValue "project" "user"))}}
+  {{input
+    autofocus = true
+    placeholder = (if toggleValue "Search projects by skill" "Search users by skill")
+    class = "search-text"
+    value=searchParam
+    key-up = (action "search" searchParam (if toggleValue "project" "user"))}}
+</div>
 
 {{#each results as |result|}}
   {{#search-result

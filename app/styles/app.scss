@@ -5,19 +5,44 @@ html, body {
   margin: 0;
   padding: 0;
 }
-.search-text {
-  background-color: #19161F;
-  color: #DD4340;
-  font-size: 22px;
-  font-weight: 500;
-  border: none;
-  -webkit-appearance: none;
-  outline: none;
-  display: inline;
-}
 
 .search-icon {
   display: inline;
   color: #DD4340;
   font-size: 40px;
+}
+
+.search-result {
+  font-family: "Helvetica Neue";
+  font-weight: 200;
+  color: #E6E3DD;
+
+  .result-skills, .result-name {
+    text-decoration: none;
+    text-underline: none;
+  }
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.search-header {
+  display: flex;
+  justify-content: flex-start;
+  padding: 7px;
+
+  .search-text {
+    background-color: #19161F;
+    color: #DD4340;
+    font-size: 26px;
+    font-weight: 500;
+    border: none;
+    -webkit-appearance: none;
+    outline: none;
+    display: inline;
+    display: flex;
+    flex: 1 0 auto;
+    margin-left: 5px;
+  }
 }
