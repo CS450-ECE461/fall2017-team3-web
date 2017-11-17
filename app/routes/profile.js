@@ -4,6 +4,6 @@ export default Gatekeeper.User.AuthenticatedRoute.extend ({
     model () {
     let currentUser = this.get ('currentUser');
     alert(currentUser.get('username'));
-    //return this.get ('store').query ('profile', {user: currentUser.id});
+    //return this.get ('store').query ('account', {user: currentUser.id});
   }
 });
