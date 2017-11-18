@@ -1,4 +1,5 @@
 html, body {
+  font-family: Graphik;
   background-color: #19161F;
   height: 100vh;
   width: 100vw;
@@ -18,7 +19,6 @@ html, body {
 
 
 .search-result {
-  font-family: Graphik;
   font-weight: 200;
   color: #E6E3DD;
 
@@ -53,11 +53,17 @@ a:-webkit-any-link {
 }
 
 .x-toggle-component {
-  font-family: Graphik;
   color: #E6E3DD;
 
   .x-toggle-flat {
     background-color: transparent;
     color: #E6E3DD;
+  }
+
+  .x-toggle-material::before, .x-toggle:checked + label > .x-toggle-material.x-toggle-btn:before {
+    background: #DD4340;
+  }
+  .x-toggle-material::after, .x-toggle:checked + label > .x-toggle-material.x-toggle-btn:after {
+    background-color: #E6E3DD;
   }
 }
