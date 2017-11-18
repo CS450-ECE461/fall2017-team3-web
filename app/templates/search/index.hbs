@@ -9,7 +9,7 @@
     autofocus = true
     placeholder = (if toggleValue "Search projects by skill" "Search users by skill")
     class = "search-text"
-    value=searchParam
+    value = searchParam
     key-up = (action "search" searchParam (if toggleValue "project" "user"))}}
 
   <div class="icons" {{action "toggleShowToggle"}}>
@@ -25,19 +25,22 @@
     offLabel = "Users"
     onLabel = "Projects"
     value = toggleValue
-    onToggle = (action (mut toggleValue))
+    onToggle = (action "toggleSwitch")
     theme = "material"
     size = "medium"}}
   {{outlet}}
 {{/if}}
 
-{{#each results as |result|}}
-  {{#search-result
-    isUser = (if toggleValue false true)
-    page = result
-    name = result.name
-    rating = result.rating
-    description = result.description
-    skills = result.skills}}
-  {{/search-result}}
-{{/each}}
+<div class="results">
+  {{#each results as |result|}}
+    {{#search-result
+      isUser = (if toggleValue false true)
+      page = result
+      name = result.name
+      rating = result.rating
+      description = result.description
+      skills = result.skills
+      photo = result.image}}
+    {{/search-result}}
+  {{/each}}
+</div>

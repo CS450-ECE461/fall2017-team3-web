@@ -21,11 +21,26 @@ html, body {
 .search-result {
   font-weight: 200;
   color: #E6E3DD;
+  padding: 10px;
 
   .result-skills, .result-name {
     text-decoration: none;
     text-underline: none;
   }
+
+  .result-name {
+    font-weight: 400;
+    font-size: 26px;
+  }
+
+  .result-image {
+    height: 75px;
+    width: 75px;
+    padding: 0px;
+    display: inline;
+  }
+
+
 }
 
 a:-webkit-any-link {
@@ -63,7 +78,13 @@ a:-webkit-any-link {
   .x-toggle-material::before, .x-toggle:checked + label > .x-toggle-material.x-toggle-btn:before {
     background: #DD4340;
   }
+
   .x-toggle-material::after, .x-toggle:checked + label > .x-toggle-material.x-toggle-btn:after {
     background-color: #E6E3DD;
   }
+}
+
+.results {
+
+  overflow-y: scroll;
 }

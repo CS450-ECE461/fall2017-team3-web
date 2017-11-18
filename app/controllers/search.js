@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   arrowValue: "keyboard-arrow-down",
+  toggleValue: false,
 
   actions: {
     search(param, type) {
@@ -21,6 +22,16 @@ export default Ember.Controller.extend({
         this.set("arrowValue", "keyboard-arrow-down")
         this.set("showToggle", false);
       }
+    },
+
+    toggleSwitch(){
+      this.toggleProperty("toggleValue");
+      if (this.get("toggleValue")){
+        var type = "project";
+      } else {
+        var type = "user";
+      }
+      this.send("search", this.get("searchParam"), type);
     }
   }
 });

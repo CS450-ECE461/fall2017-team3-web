@@ -1,6 +1,8 @@
 {{#link-to (if isUser "search.profile" "search.project") page}}
 <article class="search-result">
 
+  <img class="result-image" src="{{photo}}">
+
     <div class="result-name">
       {{name}}
     </div>
@@ -12,10 +14,6 @@
       {{description}}
     </div>
   {{/if}}
-
-    <div class="result-skills">
-      Skills: {{skills}}
-    </div>
 
 </article>
 
