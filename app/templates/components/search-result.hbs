@@ -3,17 +3,19 @@
 
   <img class="result-image" src="{{photo}}">
 
+  <div class="result-text-items">
     <div class="result-name">
       {{name}}
     </div>
 
-  {{#if isUser}}
-    {{star-rating (calc-rating rating)}}
-  {{else}}
-    <div class="result-description">
-      {{description}}
-    </div>
-  {{/if}}
+    {{#if isUser}}
+      {{star-rating (calc-rating rating)}}
+    {{else}}
+      <div class="result-description">
+        {{description}}
+      </div>
+    {{/if}}
+  </div>
 
 </article>
 

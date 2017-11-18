@@ -22,6 +22,14 @@ html, body {
   font-weight: 200;
   color: #E6E3DD;
   padding: 10px;
+  display: flex;
+
+  .result-text-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+  }
 
   .result-skills, .result-name {
     text-decoration: none;
@@ -38,6 +46,7 @@ html, body {
     width: 75px;
     padding: 0px;
     display: inline;
+    border-radius: 3px;
   }
 
 
