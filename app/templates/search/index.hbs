@@ -1,7 +1,9 @@
 <div class="search-header">
-  {{material-design-icon
-    name='search'
-    class="search-icon"}}
+  <div class="icons">
+    {{material-design-icon
+      name='search'
+      class="search-icon"}}
+  </div>
 
   {{input
     autofocus = true
@@ -9,7 +11,25 @@
     class = "search-text"
     value=searchParam
     key-up = (action "search" searchParam (if toggleValue "project" "user"))}}
+
+  <div class="icons" {{action "toggleShowToggle"}}>
+    {{material-design-icon
+      name = arrowValue
+      class = "search-icon"}}
+  </div>
 </div>
+
+{{#if showToggle}}
+  {{x-toggle
+    showLabels = true
+    offLabel = "Users"
+    onLabel = "Projects"
+    value = toggleValue
+    onToggle = (action (mut toggleValue))
+    theme = "material"
+    size = "medium"}}
+  {{outlet}}
+{{/if}}
 
 {{#each results as |result|}}
   {{#search-result
@@ -21,12 +41,3 @@
     skills = result.skills}}
   {{/search-result}}
 {{/each}}
-
-{{x-toggle
-  offLabel = "USERS"
-  onLabel = "PROJECTS"
-  value = toggleValue
-  onToggle = (action (mut toggleValue))
-  theme = "skewed"
-  size = "medium"}}
-{{outlet}}

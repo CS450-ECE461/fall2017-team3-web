@@ -5,15 +5,20 @@ html, body {
   margin: 0;
   padding: 0;
 }
+.icons {
+  display: flex;
+  align-content: stretch;
 
-.search-icon {
-  display: inline;
-  color: #DD4340;
-  font-size: 40px;
+  .search-icon {
+    color: #DD4340;
+    font-size: 40px;
+    text-align: center;
+  }
 }
 
+
 .search-result {
-  font-family: "Helvetica Neue";
+  font-family: Graphik;
   font-weight: 200;
   color: #E6E3DD;
 
@@ -44,5 +49,15 @@ a:-webkit-any-link {
     display: flex;
     flex: 1 0 auto;
     margin-left: 5px;
+  }
+}
+
+.x-toggle-component {
+  font-family: Graphik;
+  color: #E6E3DD;
+
+  .x-toggle-flat {
+    background-color: transparent;
+    color: #E6E3DD;
   }
 }
