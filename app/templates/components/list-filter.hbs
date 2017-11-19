@@ -1,4 +1,6 @@
-{{input value=value
+{{input autofocus=true
+        value=value
         key-up=(action 'handleFilterEntry')
-        placeholder="Search By Skill"}}
+        placeholder="Search By Skill"
+        class="search-text"}}
 {{yield results}}

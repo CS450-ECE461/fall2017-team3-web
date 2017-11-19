@@ -1,21 +1,37 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  arrowValue: "keyboard-arrow-down",
+  toggleValue: false,
+
   actions: {
-    filterBySkill(param) {
+    search(param, type) {
       if (param !== '') {
-        return this.get('store').query('user', {skills: param });
+        this.set("results", this.get('store').query(type, {skills: param }));
       } else {
-        return this.get('store').query('user', {skills: 'undefined'});
+        this.set("results", this.get('store').query(type, {skills: 'undefined'}));
       }
     },
 
-    filterByProject(param) {
-      if (param !== '') {
-        return this.get('store').query('project', {skills: param});
-      } else {
-        return this.get('store').query('project', {skills: 'undefined'});
+    toggleShowToggle(){
+      if (this.get("arrowValue") == "keyboard-arrow-down") {
+        this.set("arrowValue", "keyboard-arrow-up")
+        this.set("showToggle", true);
       }
+      else {
+        this.set("arrowValue", "keyboard-arrow-down")
+        this.set("showToggle", false);
+      }
+    },
+
+    toggleSwitch(){
+      this.toggleProperty("toggleValue");
+      if (this.get("toggleValue")){
+        var type = "project";
+      } else {
+        var type = "user";
+      }
+      this.send("search", this.get("searchParam"), type);
     }
   }
 });

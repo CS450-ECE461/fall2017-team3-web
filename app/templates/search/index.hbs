@@ -1,50 +1,46 @@
-{{x-toggle showLabels=true
-           offLabel="USERS"
-           onLabel="PROJECTS"
-           value=myValue onToggle=(action (mut myValue))}}
-{{#if myValue}}
-  {{#list-filter
-      filter=(action 'filterByProject')
-  as |projects|}}
-    <div>
-      {{#each projects as |project|}}
-        <article>
-          <div style="display: inline-block">
-            <em style="text-align: center">{{#link-to "search.project" project}}{{project.name}}{{/link-to}}</em>
-            <div>
-              {{project.description}}
-            </div>
-          </div>
-          <div>
-            <span>Skills Required:</span>{{project.skills}}
-          </div>
+<div class="search-header">
+  <div class="icons">
+    {{material-design-icon
+      name='search'
+      class="search-icon"}}
+  </div>
 
-        </article>
-      {{/each}}
-    </div>
-  {{/list-filter}}
-{{else}}
-  {{#list-filter
-      filter=(action 'filterBySkill')
-  as |users|}}
-    <div>
-      {{#each users as |user|}}
-        <article>
-          <div style="display: inline-block">
-            <img src="{{user.image}}" style="width: 40px; height: 40px; border-radius: 50%;" align="middle">
-            <em style="text-align: center">{{#link-to "search.profile" user}}{{user.name}}{{/link-to}}</em>
-            <div>
-              {{star-rating (calc-rating user.rating)}}
-            </div>
-          </div>
+  {{input
+    autofocus = true
+    placeholder = (if toggleValue "Search projects by skill" "Search users by skill")
+    class = "search-text"
+    value = searchParam
+    key-up = (action "search" searchParam (if toggleValue "project" "user"))}}
 
-          <div>
-            <span>Skills:</span>{{user.skills}}
-          </div>
+  <div class="icons" {{action "toggleShowToggle"}}>
+    {{material-design-icon
+      name = arrowValue
+      class = "search-icon"}}
+  </div>
+</div>
 
-        </article>
-      {{/each}}
-    </div>
-  {{/list-filter}}
+{{#if showToggle}}
+  {{x-toggle
+    showLabels = true
+    offLabel = "Users"
+    onLabel = "Projects"
+    value = toggleValue
+    onToggle = (action "toggleSwitch")
+    theme = "material"
+    size = "medium"}}
+  {{outlet}}
 {{/if}}
-{{outlet}}
+
+<div class="results">
+  {{#each results as |result|}}
+    {{#search-result
+      isUser = (if toggleValue false true)
+      page = result
+      name = result.name
+      rating = result.rating
+      description = result.description
+      skills = result.skills
+      photo = result.image}}
+    {{/search-result}}
+  {{/each}}
+</div>
