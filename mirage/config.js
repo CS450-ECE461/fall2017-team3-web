@@ -64,7 +64,7 @@ export default function() {
     id: 'project_2',
     attributes: {
       name: 'Building a Shed',
-      description: 'building an awesome shed out of plastic',
+      description: 'building an awesome shed out of plastic plastic plastic plastic plasticplastic plastic plastic plastic plastic plastic plastic plastic plastic plastic',
       skills: ['construction', 'Land Surveying'],
       owner: 'Owner Two',
       status: 'active',

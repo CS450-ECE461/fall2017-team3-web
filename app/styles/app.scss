@@ -51,6 +51,11 @@ html, body {
     flex: 0 0 auto;
   }
 
+  .result-description {
+    max-height: 36px;
+    overflow: hidden;
+  }
+
 
 }
 
