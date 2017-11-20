@@ -16,9 +16,7 @@ export default Ember.Component.extend({
         description: '',
         image: 'http://lorempixel.com/400/200',
         projects: [],
-      });
-
-      user.save();
+      }).save();
     }
   }
 });

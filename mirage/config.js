@@ -1,5 +1,10 @@
+import Ember from 'ember';
+
 export default function() {
   this.namespace = 'api';
+
+
+  Ember.inject.service();
 
   let users = [{
         type: 'user',
@@ -98,6 +103,7 @@ export default function() {
   });
 
   this.get('/users', function(db, request) {
+    console.log('The current array is'+ JSON.stringify(users));
     if(request.queryParams.skills !== undefined) {
       let filteredUsers = users.filter(function(i) {
         return i.attributes.skills.toString().toLowerCase().indexOf(request.queryParams.skills.toString().toLowerCase()) !== -1;
@@ -119,7 +125,6 @@ export default function() {
   this.post('/users', function (db, request) {
     let attrs = JSON.parse(request.requestBody);
     users.push(attrs);
-    console.log(users);
     return {data: attrs};
   });
 }
