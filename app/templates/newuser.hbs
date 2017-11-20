@@ -1,1 +1,31 @@
-{{new-user}}
+{{#if firstPage}}
+  <h2 style="text-align: center">CREATE ACCOUNT</h2>
+  <form {{action "toNextPage" on="submit"}}>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{input type="text" value=name  placeholder='Name' size="30"}}
+    </div>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{input type="text" value=email  placeholder='Email' size="30"}}
+    </div>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{input type="text" value=phone  placeholder='Phone' size="30"}}
+    </div>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{input type="text" value=password  placeholder='Password' size="30"}}
+    </div>
+    <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
+  </form>
+{{else}}
+  {{#if secondPage}}
+  <h2 style="text-align: center">TELL US <br /> ABOUT YOURSELF</h2>
+  <form {{action "saveSecondPage" on="submit"}}>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{textarea value=description  placeholder='Description' cols="40" rows="6"}}
+    </div>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{input type="text" value=skills  placeholder='Skills' size="30"}}
+    </div>
+    <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
+  </form>
+  {{/if}}
+{{/if}}
