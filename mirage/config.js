@@ -5,7 +5,7 @@ export default function() {
         type: 'user',
         id: 'user_one@example.com',
         attributes: {
-          name: 'User One',
+          name: 'Phyllis Kingsley',
           rating: [3.5, 5],
           skills: ['Photography', 'Adobe Design Suite', 'Painting'],
           email: 'user_one@example.com',
@@ -16,7 +16,7 @@ export default function() {
         type: 'user',
         id: 'user_two@example.com',
         attributes: {
-          name: 'User Two',
+          name: 'Daniel Yeager',
           rating: [5.0, 4.5, 3.5],
           skills: ['Landscaping', 'Plumbing', 'Hanging out while doing the above'],
           email: 'user_two@example.com',
@@ -27,7 +27,7 @@ export default function() {
         type: 'user',
         id: 'user_three@example.com',
         attributes: {
-          name: 'User Three',
+          name: 'Adam Carpenter',
           rating: [1.2, 5],
           skills: ['roofing', 'construction', 'surveying'],
           email: 'user_three@example.com',
@@ -38,7 +38,7 @@ export default function() {
          type: 'user',
          id: 'user_four@example.com',
          attributes: {
-           name: 'User Four',
+           name: 'James Cooper',
            rating: [3, 1.5],
            skills: ['sleeping', 'eating', 'Private Affairs'],
            email: 'user_four@example.com',
@@ -64,7 +64,7 @@ export default function() {
     id: 'project_2',
     attributes: {
       name: 'Building a Shed',
-      description: 'building an awesome shed out of plastic',
+      description: 'building an awesome shed out of plastic plastic plastic plastic plasticplastic plastic plastic plastic plastic plastic plastic plastic plastic plastic',
       skills: ['construction', 'Land Surveying'],
       owner: 'Owner Two',
       status: 'active',
