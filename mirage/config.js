@@ -115,4 +115,11 @@ export default function() {
   this.get('/projects/:id', function (db, request) {
     return { data: projects.find((project) => request.params.id === project.id) };
   });
+
+  this.post('/users', function (db, request) {
+    let attrs = JSON.parse(request.requestBody);
+    users.push(attrs);
+    console.log(users);
+    return {data: attrs};
+  });
 }
