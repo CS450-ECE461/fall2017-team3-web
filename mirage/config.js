@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default function() {
   this.namespace = 'api';
 
-
   Ember.inject.service();
 
   let users = [{
@@ -103,7 +102,6 @@ export default function() {
   });
 
   this.get('/users', function(db, request) {
-    console.log('The current array is'+ JSON.stringify(users));
     if(request.queryParams.skills !== undefined) {
       let filteredUsers = users.filter(function(i) {
         return i.attributes.skills.toString().toLowerCase().indexOf(request.queryParams.skills.toString().toLowerCase()) !== -1;
