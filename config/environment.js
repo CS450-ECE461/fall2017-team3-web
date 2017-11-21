@@ -24,11 +24,12 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    'ember-cli-google': {
+      // This is the key for the optional Recaptcha associated with Gatekeeper
+    /*'ember-cli-google': {
       recaptcha: {
         siteKey: '6LeOYjgUAAAAANY85SPKKE8QhXWBfzRFKk0KsFRe'
       }
-    },
+    },*/
 
     gatekeeper: {
       baseUrl: 'http://localhost:5000',
