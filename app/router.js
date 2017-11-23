@@ -8,9 +8,10 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('search', function() {
-    this.route('profile', { path: '/:user_id'});
-    this.route('project', { path: '/:project_id'});
+    this.route('profile', { path: '/users/:user_id'});
+    this.route('project', { path: '/projects/:project_id'});
   });
+  this.route('messages');
 });
 
 export default Router;
