@@ -29,7 +29,7 @@ export default Ember.Controller.extend({
       if (this.get("toggleValue")){
         var type = "project";
       } else {
-        var type = "user";
+        type = "user";
       }
       this.send("search", this.get("searchParam"), type);
     }

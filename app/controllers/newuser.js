@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
 
     saveSecondPage() {
       let store = this.get('store');
-      let user = store.createRecord('user', {
+      store.createRecord('user', {
         id: this.email,
         type: "user",
         name: this.name,
