@@ -1,5 +1,5 @@
 <h2 style="text-align: center">CREATE ACCOUNT</h2>
-<form {{action "saveFirstPage" on="submit"}}>
+<form {{action "toNextPage" on="submit"}}>
   <div style="text-align: center;padding: 0 7em 2em 0;">
     {{input type="text" value=name  placeholder='Name' size="30"}}
   </div>
@@ -10,7 +10,7 @@
     {{input type="text" value=phone  placeholder='Phone' size="30"}}
   </div>
   <div style="text-align: center;padding: 0 7em 2em 0;">
-    {{input type="text" value=password  placeholder='Password' size="30"}}
+    {{input type="password" value=password  placeholder='Password' size="30"}}
   </div>
   <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
 </form>

@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
   firstPage: true,
   secondPage: false,
   thirdPage: false,
+  fourthPage: false,
 
   actions: {
     toNextPage() {
@@ -12,10 +13,14 @@ export default Ember.Controller.extend({
         this.set("secondPage", true);
       } else if(this.get("secondPage")) {
         this.set("secondPage", false);
-        this.set("thirdPage", true) }
+        this.set("thirdPage", true)
+      } else if(this.get("thirdPage")) {
+        this.set("thirdPage", false);
+        this.set("fourthPage", true)
+      }
     },
 
-    saveSecondPage() {
+    saveUser() {
       let store = this.get('store');
       store.createRecord('user', {
         id: this.email,
