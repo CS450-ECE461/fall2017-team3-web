@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
         type: "user",
         name: this.name,
         rating: [5],
-        skills: this.skills,
+        skills: this.skills.split(","),
         email: this.email,
         phone: this.phone,
         description: this.description,
