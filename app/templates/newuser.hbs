@@ -10,7 +10,7 @@
           {{input type="email" value=email  placeholder='Email' size="30" required='true'}}
         </div>
         <div style="text-align: center;padding: 0 7em 2em 0;">
-          {{input type="text" value=phone  placeholder='Phone' size="30"}}
+          {{input type="tel" value=phone  placeholder='Phone' size="30"}}
         </div>
         <div style="text-align: center;padding: 0 7em 2em 0;">
           {{input type="password" value=password  placeholder='Password' size="30" required='true'}}
@@ -53,7 +53,7 @@
         <h2 style="text-align: center">show off<\br> your stuff</h2>
         <form {{action "saveUser" on="submit"}}>
           <div style="text-align: center;padding: 0 7em 2em 0;">
-            {{input type="text" value=portfolio  placeholder='Portfolio Link' size="30"}}
+            {{input type="url" value=portfolio  placeholder='Portfolio Link' size="30"}}
           </div>
           <p><button style=";padding: 0 2em 1em 0;" type="button">Upload Profile Image</button></p>
           <p><button style=";padding: 0 2em 1em 0;" type="submit">Profile</button></p>
