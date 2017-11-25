@@ -4,16 +4,16 @@
       <h2 style="text-align: center">who are you</h2>
       <form {{action "toNextPage" on="submit"}}>
         <div style="text-align: center;padding: 0 7em 2em 0;">
-          {{input type="text" value=name  placeholder='Name' size="30"}}
+          {{input type="text" value=name  placeholder='Name' size="30" required='true'}}
         </div>
         <div style="text-align: center;padding: 0 7em 2em 0;">
-          {{input type="email" value=email  placeholder='Email' size="30"}}
+          {{input type="email" value=email  placeholder='Email' size="30" required='true'}}
         </div>
         <div style="text-align: center;padding: 0 7em 2em 0;">
           {{input type="text" value=phone  placeholder='Phone' size="30"}}
         </div>
         <div style="text-align: center;padding: 0 7em 2em 0;">
-          {{input type="password" value=password  placeholder='Password' size="30"}}
+          {{input type="password" value=password  placeholder='Password' size="30" required='true'}}
         </div>
         <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
       </form>
@@ -26,7 +26,8 @@
   <h2 style="text-align: center">what do you do</h2>
   <form {{action "toNextPage" on="submit"}}>
     <div style="text-align: center;padding: 0 7em 2em 0;">
-      {{textarea value=description  placeholder='Description' cols="40" rows="6"}}
+      {{textarea name="descriptionAera" value=description placeholder='Description' cols="40" rows="4" maxlength="150"}}
+      {{character-counter characterCount=this.description.length characterLimit=150 inputClass='descriptionAera'}}characters remaining
     </div>
     <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
   </form>
