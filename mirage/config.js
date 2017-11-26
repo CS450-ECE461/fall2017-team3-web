@@ -9,7 +9,9 @@ export default function() {
           rating: [3.5, 5],
           skills: ['Photography', 'Adobe Design Suite', 'Painting'],
           email: 'user_one@example.com',
-          image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+          image: '/assets/images/profile.png',
+          description: 'I am passionate about taking the perfect photograph and the best designs. Willing to participate in any project',
+          portfolio: 'phylliskingsley.com',
           projects: ['project_1','project_3']
         }
       }, {
@@ -18,9 +20,11 @@ export default function() {
         attributes: {
           name: 'Daniel Yeager',
           rating: [5.0, 4.5, 3.5],
-          skills: ['Landscaping', 'Plumbing', 'Hanging out while doing the above'],
+          skills: ['Landscaping', 'Plumbing', 'roofing'],
           email: 'user_two@example.com',
-          image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg',
+          image: '/assets/images/profile.png',
+          description: 'You will find me useful in any home repair activities, inside and out',
+          portfolio: 'danielyeager.blogpost.com',
           projects: ['project_1','project_2']
         }
       }, {
@@ -29,9 +33,11 @@ export default function() {
         attributes: {
           name: 'Adam Carpenter',
           rating: [1.2, 5],
-          skills: ['roofing', 'construction', 'surveying'],
+          skills: ['roofing', 'construction', 'land surveys'],
           email: 'user_three@example.com',
-          image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg',
+          image: '/assets/images/profile.png',
+          description: 'I build a house from the ground up!',
+          portfolio: 'projects.construction.com',
           projects: ['project_1','project_2']
         }
       }, {
@@ -40,9 +46,11 @@ export default function() {
          attributes: {
            name: 'James Cooper',
            rating: [3, 1.5],
-           skills: ['sleeping', 'eating', 'Private Affairs'],
+           skills: ['CAD', 'Design'],
            email: 'user_four@example.com',
-           image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg',
+           image: '/assets/images/profile.png',
+           description: 'Want 3D models? You need my help!',
+           portfolio: '3dmodels.net',
            projects: ['project_3','project_2']
     }
   }];
@@ -57,7 +65,7 @@ export default function() {
       owner: 'Owner One',
       status: 'active',
       collaborators: ['user_two@example.com','user_one@example.com'],
-      image: 'http://lorempixel.com/400/200'
+      image: '/assets/images/project.png'
     }
   }, {
     type: 'project',
@@ -69,7 +77,7 @@ export default function() {
       owner: 'Owner Two',
       status: 'active',
       collaborators: ['user_three@example.com','user_one@example.com'],
-      image: 'http://lorempixel.com/400/200'
+      image: '/assets/images/project.png'
     }
   }, {
     type: 'project',
@@ -81,7 +89,7 @@ export default function() {
       owner: 'Owner Three',
       status: 'inactive',
       collaborators: ['user_three@example.com'],
-      image: 'http://lorempixel.com/400/200'
+      image: '/assets/images/project.png'
     }
   }];
 

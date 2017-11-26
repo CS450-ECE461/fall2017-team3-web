@@ -1,23 +1,25 @@
 <div>
-  <img src="{{model.image}}" style="width: 100px; height: 100px;" align="middle">
-  <h2>{{model.name}}</h2>
-  {{star-rating model.averageRating}}
-  <div>
-    <strong>Skills:</strong>
+  <article>
+    <img src="{{model.image}}" style="width: 100px; height: 100px;" align="middle">
+    <div>{{star-rating model.averageRating}}</div>
+    <h2>{{model.name}}</h2>
+    <div>
+      {{model.skills}}
+    </div>
+    <div>
+      {{model.portfolio}}
+    </div>
+  </article>
+  <article>
+    <strong>Hey, <\br> I'm {{model.name}}</strong>
     <p>
-      {{#each model.skills as |skill|}}
-      <li>{{skill}}</li>
-      {{/each}}
+      {{model.description}}
     </p>
-  </div>
+  </article>
   <div>
-    <strong>Email:</strong>
-    {{model.email}}
-  </div>
-  <div>
-    <strong>Contributes to projects:</strong>
     {{#each model.projects as |project|}}
       <li>{{#link-to "search.project" project}}{{project}}{{/link-to}}</li>
     {{/each}}
   </div>
+
 </div>
