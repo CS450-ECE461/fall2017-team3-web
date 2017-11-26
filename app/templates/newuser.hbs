@@ -1,7 +1,7 @@
 {{#if firstPage}}
 
 
-      <h2 style="text-align: center">who are you</h2>
+      <h2 style="text-align: center; color: white">who are you</h2>
       <form {{action "toNextPage" on="submit"}}>
         <div style="text-align: center;padding: 0 7em 2em 0;">
           {{input type="text" value=name  placeholder='Name' size="30" required='true'}}
@@ -23,11 +23,13 @@
   {{#if secondPage}}
 
 
-  <h2 style="text-align: center">what do you do</h2>
+  <h2 style="text-align: center; color: white">what do you do</h2>
   <form {{action "toNextPage" on="submit"}}>
     <div style="text-align: center;padding: 0 7em 2em 0;">
       {{textarea name="descriptionAera" value=description placeholder='Description' cols="40" rows="4" maxlength="150"}}
-      {{character-counter characterCount=this.description.length characterLimit=150 inputClass='descriptionAera'}}characters remaining
+      <div  style="color: white">
+        {{character-counter characterCount=this.description.length characterLimit=150 inputClass='descriptionAera'}}characters remaining
+      </div>
     </div>
     <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
   </form>
@@ -37,10 +39,10 @@
     {{#if thirdPage}}
 
 
-      <h2 style="text-align: center">what's in <\br> your toolbag</h2>
+      <h2 style="text-align: center; color: white">what's in <\br> your toolbag</h2>
       <form {{action "toNextPage" on="submit"}}>
         <div style="text-align: center;padding: 0 7em 2em 0;">
-          {{input type="text" value=skills  placeholder='Skills' size="30"}}
+          {{input type="text" value=skills  placeholder='Skills' size="30" required='true'}}
         </div>
         <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
       </form>
@@ -50,7 +52,7 @@
       {{#if fourthPage}}
 
 
-        <h2 style="text-align: center">show off<\br> your stuff</h2>
+        <h2 style="text-align: center; color: white">show off<\br> your stuff</h2>
         <form {{action "saveUser" on="submit"}}>
           <div style="text-align: center;padding: 0 7em 2em 0;">
             {{input type="url" value=portfolio  placeholder='Portfolio Link' size="30"}}
