@@ -12,5 +12,4 @@ test('it renders', function(assert) {
   this.render(hbs`{{search-result}}`);
 
   assert.equal(this.$().text().trim(), '');
-
 });
