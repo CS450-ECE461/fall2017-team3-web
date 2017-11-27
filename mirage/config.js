@@ -63,7 +63,7 @@ export default function() {
       description: 'creating a messaging app to beat WhatsApp',
       skills: ['web design', 'web development', 'software testing'],
       owner: 'Owner One',
-      status: 'active',
+      active: true,
       collaborators: ['user_two@example.com','user_one@example.com'],
       image: '/assets/images/project.png'
     }
@@ -75,7 +75,7 @@ export default function() {
       description: 'building an awesome shed out of plastic plastic plastic plastic plasticplastic plastic plastic plastic plastic plastic plastic plastic plastic plastic',
       skills: ['construction', 'Land Surveying'],
       owner: 'Owner Two',
-      status: 'active',
+      active: false,
       collaborators: ['user_three@example.com','user_one@example.com'],
       image: '/assets/images/project.png'
     }
@@ -87,7 +87,7 @@ export default function() {
       description: 'provide awesome food to an awesome event',
       skills: ['cooking', 'baking'],
       owner: 'Owner Three',
-      status: 'inactive',
+      active: false,
       collaborators: ['user_three@example.com'],
       image: '/assets/images/project.png'
     }
