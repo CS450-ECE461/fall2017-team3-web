@@ -6,7 +6,7 @@ module.exports = function(environment) {
     modulePrefix: 'frontend-app',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // this is needed for the account adapter to work
