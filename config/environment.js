@@ -22,7 +22,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      isAuthenticated: 'dummy'
+      isAuthenticated: false
     },
 
       // This is the key for the optional Recaptcha associated with Gatekeeper
@@ -61,6 +61,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.isAuthenticated= false;
   }
 
   if (environment === 'production') {
