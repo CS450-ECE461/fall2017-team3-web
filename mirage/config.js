@@ -167,7 +167,7 @@ export default function() {
   this.namespace = 'api';
 
   let users = [{
-        id: 'user_one@example.com',
+        id: 'tester@no-reply.com',
           name: 'Phyllis Kingsley',
           rating: [3.5, 5],
           skills: ['Photography', 'Adobe Design Suite', 'Painting'],

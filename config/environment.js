@@ -22,6 +22,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      isAuthenticated: 'dummy'
     },
 
       // This is the key for the optional Recaptcha associated with Gatekeeper
