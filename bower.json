@@ -4,6 +4,9 @@
     "material-design-lite": "^1.3.0",
     "material-design-icons": "^3.0.1",
     "mdl-select-component": "https://github.com/MEYVN-digital/mdl-selectfield.git#^0.0.8",
-    "initial.js": "^0.1.0"
+    "initial.js": "^0.1.0",
+    "interact": "1.2.8",
+    "jquery-simulate": "1.0.1",
+    "fontawesome": "~4.7.0"
   }
 }
