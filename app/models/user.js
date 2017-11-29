@@ -8,7 +8,7 @@ export default DS.Model.extend({
     let arr = this.get('rating');
     let sum = 0;
 
-    for(let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       sum += arr[i];
     }
     return sum/arr.length;

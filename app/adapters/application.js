@@ -1,5 +1,5 @@
-import DS from 'ember-data';
+import RESTAdapter from 'ember-data/adapters/rest';
 
-export default DS.JSONAPIAdapter.extend({
+export default RESTAdapter.extend({
   namespace: 'api'
 });
