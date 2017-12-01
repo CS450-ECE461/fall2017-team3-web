@@ -9,9 +9,10 @@ module.exports = function(environment) {
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
+        // this is needed for the account adapter to work
+        'ds-improved-ajax': true
       },
+
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
@@ -21,6 +22,24 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+      // This is the key for the optional Recaptcha associated with Gatekeeper
+    /*'ember-cli-google': {
+      recaptcha: {
+        siteKey: '6LeOYjgUAAAAANY85SPKKE8QhXWBfzRFKk0KsFRe'
+      }
+    },*/
+
+    gatekeeper: {
+      baseUrl: 'http://localhost:5000',
+      startRoute: 'profile',
+      signInRoute: 'sign-in',
+
+      tokenOptions: {
+        client_id: 'dummy',
+        client_secret: '1234567890'
+      }
     }
   };
 
@@ -41,6 +60,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.isAuthenticated= false;
   }
 
   if (environment === 'production') {

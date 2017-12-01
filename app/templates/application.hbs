@@ -1,1 +1,15 @@
 {{outlet}}
+
+{{#unless isLoginRoute}}
+<div>
+  {{#link-to "search"}}
+    <li>Search</li>
+  {{/link-to}}
+  {{#link-to "profile"}}
+    <li>Profile</li>
+  {{/link-to}}
+  {{#link-to "calendar"}}
+    <li>Calendar</li>
+  {{/link-to}}
+</div>
+  {{/unless}}
