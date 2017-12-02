@@ -136,7 +136,7 @@ a:-webkit-any-link {
 
   img {
     border-radius: 50%;
-    border: solid #F5EAD5 2px;
+    border: solid #F5EAD5 3px;
     height: 150px !important;
     width: 150px !important;
     margin-left: auto;
@@ -160,5 +160,37 @@ a:-webkit-any-link {
     font-weight: 900;
     line-height: 35px;
     margin-bottom: 15px;
+  }
+}
+
+.projects-list {
+  background-color: white;
+
+  .projects-title {
+    background-color: #21172D;
+    color: white;
+    height: 110px;
+    display: flex;
+    line-height: 110px;
+    font-size: 32px;
+    padding-left: 30px;
+    font-weight: 700;
+  }
+
+  .project-item {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    img {
+      border-radius: 5px;
+      border: solid #21172D 3px;
+      margin-bottom: 10px;
+    }
+
+    .project-name {
+      color: #21172D;
+      font-size: 16px;
+    }
   }
 }

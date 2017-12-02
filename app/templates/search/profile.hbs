@@ -1,6 +1,6 @@
 <div>
   <article class="title-block">
-    <img src="{{user.image}}" style="width: 100px; height: 100px;" align="middle">
+    <img src="{{user.image}}">
     <div class="user-stars">{{star-rating user.averageRating}}</div>
     <div class="user-name">{{user.name}}</div>
     <div class="user-skills">
@@ -17,28 +17,19 @@
   </article>
 
 
-  <div>
+  <div class="projects-list">
+    <div class="projects-title">Projects</div>
     {{#each projects as |project|}}
       {{#each user.projects as |usedProject|}}
         {{#if (compare-values project.id usedProject)}}
-          {{#if project.active}}
-            <h4>Current Project</h4>
+          {{#unless project.active}}
             {{#link-to "search.project" usedProject}}
-              <div>
+              <div class="project-item">
                 <img src="{{project.image}}" style="width: 100px; height: 100px;" align="middle">
-                <div>{{project.name}}</div>
+                <div class="project-name">{{project.name}}</div>
               </div>
             {{/link-to}}
-          {{else}}
-            <h4>Past Project</h4>
-            {{#link-to "search.project" usedProject}}
-              <div>
-                <img src="{{project.image}}" style="width: 100px; height: 100px;" align="middle">
-                <div>{{project.name}}</div>
-                <div>{{project.description}}</div>
-              </div>
-            {{/link-to}}
-          {{/if}}
+          {{/unless}}
         {{/if}}
       {{/each}}
     {{/each}}
