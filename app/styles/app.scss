@@ -214,6 +214,11 @@ a:-webkit-any-link {
 
   .nav-link {
     color: white;
-    line-height: 60px;
+
+    .material-icons {
+      font-size: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
   }
 }
