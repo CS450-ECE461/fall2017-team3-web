@@ -12,7 +12,7 @@
 
 html, body {
   font-family: Graphik;
-  background-color: #19161F;
+  background-color: #21172D;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -79,7 +79,7 @@ a:-webkit-any-link {
   padding: 7px;
 
   .search-text {
-    background-color: #19161F;
+    background-color: #21172D;
     color: #EE4640;
     font-size: 26px;
     font-weight: 500;
@@ -136,7 +136,7 @@ a:-webkit-any-link {
 
   img {
     border-radius: 50%;
-    border: solid white 2px;
+    border: solid #F5EAD5 2px;
     height: 150px !important;
     width: 150px !important;
     margin-left: auto;
@@ -145,5 +145,20 @@ a:-webkit-any-link {
 
   .user-stars {
     margin: 10px;
+  }
+}
+
+.about-block {
+  background-color: white;
+  color: #21172D;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .user-greeting {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 35px;
+    margin-bottom: 15px;
   }
 }

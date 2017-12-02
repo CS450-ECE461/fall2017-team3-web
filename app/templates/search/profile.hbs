@@ -7,12 +7,16 @@
       {{user.skills}}
     </div>
   </article>
-  <article>
-    <strong>Hey, <\br> I'm {{user.name}}</strong>
+
+
+  <article class="about-block">
+    <div class="user-greeting">Hey, <\br> I'm {{user.name}}</div>
     <p>
       {{user.description}}
     </p>
   </article>
+
+
   <div>
     {{#each projects as |project|}}
       {{#each user.projects as |usedProject|}}
