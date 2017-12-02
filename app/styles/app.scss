@@ -23,7 +23,7 @@ html, body {
   align-content: stretch;
 
   .search-icon {
-    color: #DD4340;
+    color: #EE4640;
     font-size: 40px;
     text-align: center;
   }
@@ -32,7 +32,7 @@ html, body {
 
 .search-result {
   font-weight: 200;
-  color: #E6E3DD;
+  color: #F5EAD5;
   padding: 10px;
   display: flex;
 
@@ -80,7 +80,7 @@ a:-webkit-any-link {
 
   .search-text {
     background-color: #19161F;
-    color: #DD4340;
+    color: #EE4640;
     font-size: 26px;
     font-weight: 500;
     border: none;
@@ -94,19 +94,19 @@ a:-webkit-any-link {
 }
 
 .x-toggle-component {
-  color: #E6E3DD;
+  color: #F5EAD5;
 
   .x-toggle-flat {
     background-color: transparent;
-    color: #E6E3DD;
+    color: #F5EAD5;
   }
 
   .x-toggle-material::before, .x-toggle:checked + label > .x-toggle-material.x-toggle-btn:before {
-    background: #DD4340;
+    background: #EE4640;
   }
 
   .x-toggle-material::after, .x-toggle:checked + label > .x-toggle-material.x-toggle-btn:after {
-    background-color: #E6E3DD;
+    background-color: #F5EAD5;
   }
 }
 
@@ -115,5 +115,35 @@ a:-webkit-any-link {
 }
 
 .title-block {
+  background-color: #EE4640;
+  text-align: center;
+  color: #F5EAD5;
+  height: 400px;
+  font-weight: 600;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
+  .user-name {
+    font-size: 22px;
+    line-height: 35px;
+  }
+
+  .user-skills {
+    font-weight: 400;
+  }
+
+  img {
+    border-radius: 50%;
+    border: solid white 2px;
+    height: 150px !important;
+    width: 150px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .user-stars {
+    margin: 10px;
+  }
 }
