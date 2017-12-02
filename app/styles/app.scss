@@ -10,6 +10,15 @@
 @import 'addons/ember-calendar/paint-core';
 @import 'addons/ember-calendar/main';
 
+.app-view {
+  height: calc(100vh - 60px);
+}
+
+.app-outlet {
+  height: 100%;
+  overflow-y: scroll;
+}
+
 html, body {
   font-family: Graphik;
   background-color: #21172D;
@@ -192,5 +201,19 @@ a:-webkit-any-link {
       color: #21172D;
       font-size: 16px;
     }
+  }
+}
+
+.navbar {
+  background-color: #EE4640;
+  position: static;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+
+
+  .nav-link {
+    color: white;
+    line-height: 60px;
   }
 }
