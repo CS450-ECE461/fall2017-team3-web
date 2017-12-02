@@ -5,6 +5,9 @@ const TOKENS = [
   {token_type: 'Bearer', access_token: 'abcdefghij', refresh_token: 'jihgfedcba'},
   {token_type: 'Bearer', access_token: '!@#$%^&*()'}
 ];
+//variables to hold active user credentials
+var currentUsername = '';
+var currentPassword = '';
 
 export default function() {
   this.urlPrefix = 'http://localhost:5000';
@@ -54,8 +57,9 @@ export default function() {
   }
 
   this.post ('/oauth2/token', (schema, req) => {
-    let body = JSON.parse (req.requestBody);
 
+    console.log(req.requestBody);
+    let body = JSON.parse (req.requestBody);
     if (body.client_id !== 'dummy') {
       return new Response (400, {'Content-Type': 'application/json'}, {
         errors: {code: 'invalid_client', message: 'Your client id is not valid.'}
@@ -65,17 +69,21 @@ export default function() {
     if (body.grant_type === 'password') {
       // working with token.0
 
-      if (body.username !== 'username') {
+      if (!searchById(body.username)) {
+        console.log('INSIDE CHECKING USERNAME');
         return new Response (400, {'Content-Type': 'application/json'}, {
           errors: {code: 'invalid_username', message: 'Your username is incorrect.'}
         });
       }
-      else if (body.password !== 'password') {
+      else if (!checkPassword(body.username, body.password)) {
+        console.log('INSIDE CHECKING PASSWORD');
         return new Response (400, {'Content-Type': 'application/json'}, {
           errors: {code: 'invalid_password', message: 'Your password is incorrect.'}
         });
       }
       else {
+        currentUsername = body.username;
+        currentPassword = body.password;
         return TOKENS[0];
       }
     }
@@ -118,17 +126,14 @@ export default function() {
     return doAuthenticatedRequest (req, TOKENS[2].access_token, () => {
       let body = JSON.parse (req.requestBody);
 
-      if (body.account.username === 'username' &&
-          body.account.password === 'password' &&
-          body.account.email === 'email')
+      if (body.account.username !== undefined &&
+          body.account.password !== undefined)
       {
+        console.log(body.account.username);
+        console.log(body.account.password);
+        let returnedUser = returnUser(body.account.username, body.account.password);
         return {
-          account: {
-            _id: 1,
-            username: 'username',
-            password: 'password',
-            email: 'email'
-          }
+          account: returnedUser
         }
       }
       else {
@@ -140,12 +145,15 @@ export default function() {
   });
 
   this.get ('/accounts/me', function (schema, req) {
+    console.log('INSIDE GET /ACCOUNTS/ME');
+    console.log(req);
     return doAuthenticatedRequest (req, TOKENS[0].access_token, () => {
       return {
         account: {
           _id: 1,
-          email: 'tester@no-reply.com',
-          username: 'tester'
+          username: currentUsername,
+          password: currentPassword,
+          email: currentUsername
         }
       }
     });
@@ -157,17 +165,59 @@ export default function() {
     });
    });
 
+//----------------------------------------------------------------------------
+  //check if user name matches an entry in the users array
+
+let searchById = function(item) {
+  if (item !== undefined) {
+    let userFound = users.filter(function (i) {
+      if (i.id === item) {
+        return true;
+      }
+      return false;
+    });
+    return userFound;
+  }
+};
 
 
+  //check if the typed password matches for the user
+  let checkPassword = function(username, password) {
+    if (username !== undefined && password !== undefined) {
+      let passMatch = users.filter(function (i) {
+        console.log('INSIDE CHECK PASSWORD');
+        if ((i.id === username) && (i.password === password)) {
+          return true;
+        }
+        return false;
+      });
+      return passMatch;
+    }
+  };
+
+  //return the account from user array
+  let returnUser = function (username, password) {
+    console.log('PASSED IN USERNAME');
+    console.log(username);
+    console.log('PASSED IN PASSWORD');
+    console.log(password);
+    let user = users.filter(function (i) {
+      if ((i.id === username) && (i.password === password)) {
+        return i;
+      }
+    });
+    console.log(user);
+    return user;
+  };
 
 
-
-
+//-----------------------------------------------------------------------------
 
   this.namespace = 'api';
 
   let users = [{
-        id: 'tester@no-reply.com',
+        id: 'user_one@example.com',
+          password: 'userone',
           name: 'Phyllis Kingsley',
           rating: [3.5, 5],
           skills: ['Photography', 'Adobe Design Suite', 'Painting'],
@@ -178,6 +228,7 @@ export default function() {
           projects: ['project_1','project_3']
       }, {
         id: 'user_two@example.com',
+    password: 'usertwo',
           name: 'Daniel Yeager',
           rating: [5.0, 4.5, 3.5],
           skills: ['Landscaping', 'Plumbing', 'roofing'],
@@ -188,6 +239,7 @@ export default function() {
           projects: ['project_1','project_2']
       }, {
         id: 'user_three@example.com',
+    password: 'userthree',
           name: 'Adam Carpenter',
           rating: [1.2, 5],
           skills: ['roofing', 'construction', 'land surveys'],
@@ -198,6 +250,7 @@ export default function() {
           projects: ['project_1','project_2']
       }, {
          id: 'user_four@example.com',
+    password: 'userfour',
            name: 'James Cooper',
            rating: [3, 1.5],
            skills: ['CAD', 'Design'],
