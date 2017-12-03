@@ -57,8 +57,6 @@ export default function() {
   }
 
   this.post ('/oauth2/token', (schema, req) => {
-
-    console.log(req.requestBody);
     let body = JSON.parse (req.requestBody);
     if (body.client_id !== 'dummy') {
       return new Response (400, {'Content-Type': 'application/json'}, {
@@ -70,13 +68,11 @@ export default function() {
       // working with token.0
 
       if (!searchById(body.username)) {
-        console.log('INSIDE CHECKING USERNAME');
         return new Response (400, {'Content-Type': 'application/json'}, {
           errors: {code: 'invalid_username', message: 'Your username is incorrect.'}
         });
       }
       else if (!checkPassword(body.username, body.password)) {
-        console.log('INSIDE CHECKING PASSWORD');
         return new Response (400, {'Content-Type': 'application/json'}, {
           errors: {code: 'invalid_password', message: 'Your password is incorrect.'}
         });
@@ -129,8 +125,6 @@ export default function() {
       if (body.account.username !== undefined &&
           body.account.password !== undefined)
       {
-        console.log(body.account.username);
-        console.log(body.account.password);
         let returnedUser = returnUser(body.account.username, body.account.password);
         return {
           account: returnedUser
@@ -145,8 +139,6 @@ export default function() {
   });
 
   this.get ('/accounts/me', function (schema, req) {
-    console.log('INSIDE GET /ACCOUNTS/ME');
-    console.log(req);
     return doAuthenticatedRequest (req, TOKENS[0].access_token, () => {
       return {
         account: {
@@ -171,12 +163,13 @@ export default function() {
 let searchById = function(item) {
   if (item !== undefined) {
     let userFound = users.filter(function (i) {
-      if (i.id === item) {
-        return true;
-      }
-      return false;
+      return i.id === item;
     });
-    return userFound;
+    if(userFound.length === 0) {
+      return false;
+    } else {
+      return true;
+    }
   }
 };
 
@@ -185,28 +178,23 @@ let searchById = function(item) {
   let checkPassword = function(username, password) {
     if (username !== undefined && password !== undefined) {
       let passMatch = users.filter(function (i) {
-        console.log('INSIDE CHECK PASSWORD');
-        if ((i.id === username) && (i.password === password)) {
-          return true;
-        }
-        return false;
+        return ((i.id === username) && (i.password === password));
       });
-      return passMatch;
+      if(passMatch.length === 0) {
+        return false;
+      } else {
+        return true;
+      }
     }
   };
 
   //return the account from user array
   let returnUser = function (username, password) {
-    console.log('PASSED IN USERNAME');
-    console.log(username);
-    console.log('PASSED IN PASSWORD');
-    console.log(password);
     let user = users.filter(function (i) {
       if ((i.id === username) && (i.password === password)) {
         return i;
       }
     });
-    console.log(user);
     return user;
   };
 
