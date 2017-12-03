@@ -309,5 +309,15 @@ let searchById = function(item) {
   this.get('/projects/:id', function (db, request) {
     return { projects: projects.find((project) => request.params.id === project.id) };
   });
+
+  this.post('/users', function (db, request) {
+    let attrs = JSON.parse(request.requestBody);
+    console.log('THe attributes received are : ');
+    console.log(attrs);
+    console.log('The set of users now is ');
+    console.log(users);
+    users.push(attrs);
+    return {attrs};
+  });
 }
 

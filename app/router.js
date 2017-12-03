@@ -14,6 +14,7 @@ Router.map(function() {
     this.route('project', { path: '/:project_id'});
   });
   this.route('calendar');
+  this.route('new-user');
 });
 
 export default Router;
