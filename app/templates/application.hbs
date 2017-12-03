@@ -1,6 +1,6 @@
 {{outlet}}
 
-{{#unless isLoginRoute}}
+{{#unless isLoginOrRegisterRoute}}
 <div>
   {{#link-to "search"}}
     <li>Search</li>
@@ -12,4 +12,4 @@
     <li>Calendar</li>
   {{/link-to}}
 </div>
-  {{/unless}}
+{{/unless}}

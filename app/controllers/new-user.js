@@ -31,7 +31,7 @@ export default Ember.Controller.extend({
         password: this.password,
         phone: this.phone,
         description: this.description,
-        image: 'http://lorempixel.com/400/200',
+        image: '/assets/images/profile.png',
         projects: [],
         portfolio: this.portfolio
       }).save();
