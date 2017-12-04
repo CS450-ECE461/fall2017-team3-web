@@ -390,3 +390,26 @@ a:-webkit-any-link {
     color: #EE4640;
   }
 }
+
+.messenger {
+  display: flex;
+  flex-direction: column;
+
+  .message-header {
+    color: white;
+    height: 80px;
+    font-size: 32px;
+    line-height: 80px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .message-threads {
+    height: calc(100vh - 140px);
+    background-color: #F5EAD5;
+  }
+}
+
+.material-icons {
+  color: #F5EAD5;
+}

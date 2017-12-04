@@ -274,11 +274,11 @@ let searchById = function(item) {
 
   let projects = [{
     id: 'project_1',
-    name: 'Messaging App',
-    description: 'creating a messaging app to beat WhatsApp',
+    name: 'Collaboration App',
+    description: "Create an application to allow makers to connect with projects in their area." ,
     skills: ['web design', 'web development', 'software testing'],
     owner: 'Owner One',
-    active: true,
+    active: false,
     collaborators: ['user_five@example.com','user_one@example.com'],
     image: '/assets/images/project.png'
     }, {
@@ -305,7 +305,7 @@ let searchById = function(item) {
     description: 'To help Math students in our local school, I want to help create an educational app that provides sample problems and solution to common assignments',
     skills: ['HTML', 'CSS', 'javascript','web development'],
     owner: 'Owner Four',
-    active: false,
+    active: true,
     collaborators: ['user_one@example.com','user_five@example.com'],
     image: '/assets/images/project.png'
   }
