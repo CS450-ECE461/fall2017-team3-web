@@ -305,7 +305,7 @@ let searchById = function(item) {
     description: 'To help Math students in our local school, I want to help create an educational app that provides sample problems and solution to common assignments',
     skills: ['HTML', 'CSS', 'javascript','web development'],
     owner: 'Owner Four',
-    active: true,
+    active: false,
     collaborators: ['user_one@example.com','user_five@example.com'],
     image: '/assets/images/project.png'
   }

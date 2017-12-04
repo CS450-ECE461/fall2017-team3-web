@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75492548-4745-4719-ba52-3472b1601d0d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/app.scss" afterPath="$PROJECT_DIR$/app/styles/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/profile.hbs" afterPath="$PROJECT_DIR$/app/templates/profile.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mirage/config.js" afterPath="$PROJECT_DIR$/mirage/config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -19,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/app.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2940">
@@ -44,6 +43,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
               <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mirage/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="307" column="17" lean-forward="false" selection-start-line="307" selection-start-column="17" selection-end-line="307" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -76,7 +85,6 @@
         <option value="$PROJECT_DIR$/app/templates/components/list-filter.hbs" />
         <option value="$PROJECT_DIR$/config/environment.js" />
         <option value="$PROJECT_DIR$/app/templates/components/search-result.hbs" />
-        <option value="$PROJECT_DIR$/mirage/config.js" />
         <option value="$PROJECT_DIR$/app/routes/profile.js" />
         <option value="$PROJECT_DIR$/app/controllers/search.js" />
         <option value="$PROJECT_DIR$/app/authenticators/oauth2.js" />
@@ -90,6 +98,7 @@
         <option value="$PROJECT_DIR$/app/templates/calendar.hbs" />
         <option value="$PROJECT_DIR$/app/templates/profile.hbs" />
         <option value="$PROJECT_DIR$/app/styles/app.scss" />
+        <option value="$PROJECT_DIR$/mirage/config.js" />
       </list>
     </option>
   </component>
@@ -308,12 +317,12 @@
       <workItem from="1511013566235" duration="10833000" />
       <workItem from="1512157412711" duration="2933000" />
       <workItem from="1512183148207" duration="5626000" />
-      <workItem from="1512386718746" duration="268000" />
+      <workItem from="1512386718746" duration="606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83667000" />
+    <option name="totallyTimeSpent" value="84005000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -458,14 +467,6 @@
     <entry file="file://$PROJECT_DIR$/app/routes/calendar.js" />
     <entry file="file://$PROJECT_DIR$/app/routes/index.js" />
     <entry file="file://$PROJECT_DIR$/app/controllers/sign-in.js" />
-    <entry file="file://$PROJECT_DIR$/mirage/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/profile.js" />
     <entry file="file://$PROJECT_DIR$/app/controllers/calendar.js" />
     <entry file="file://$PROJECT_DIR$/app/controllers/index.js" />
@@ -493,6 +494,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -591,6 +593,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2940">
           <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mirage/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="307" column="17" lean-forward="false" selection-start-line="307" selection-start-column="17" selection-end-line="307" selection-end-column="17" />
           <folding />
         </state>
       </provider>
