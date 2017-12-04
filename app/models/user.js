@@ -15,6 +15,7 @@ export default DS.Model.extend({
   }),
   skills: DS.attr(),
   email: DS.attr(),
+  password: DS.attr(),
   image: DS.attr(),
   description: DS.attr(),
   portfolio: DS.attr(),

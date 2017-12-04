@@ -1,0 +1,68 @@
+{{#if firstPage}}
+
+
+  <h2 style="text-align: center; color: white">who are you</h2>
+  <form {{action "toNextPage" on="submit"}}>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{input type="text" value=name  placeholder='Name' size="30" required='true'}}
+    </div>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{input type="email" value=email  placeholder='Email' size="30" required='true'}}
+    </div>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{input type="tel" value=phone  placeholder='Phone' size="30"}}
+    </div>
+    <div style="text-align: center;padding: 0 7em 2em 0;">
+      {{input type="password" value=password  placeholder='Password' size="30" required='true'}}
+    </div>
+    <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
+  </form>
+
+
+{{else}}
+  {{#if secondPage}}
+
+
+    <h2 style="text-align: center; color: white">what do you do</h2>
+    <form {{action "toNextPage" on="submit"}}>
+      <div style="text-align: center;padding: 0 7em 2em 0;">
+        {{textarea name="descriptionAera" value=description placeholder='Description' cols="40" rows="4" maxlength="150"}}
+        <div  style="color: white">
+          {{character-counter characterCount=this.description.length characterLimit=150 inputClass='descriptionAera'}}characters remaining
+        </div>
+      </div>
+      <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
+    </form>
+
+
+  {{else}}
+    {{#if thirdPage}}
+
+
+      <h2 style="text-align: center; color: white">what's in <\br> your toolbag</h2>
+      <form {{action "toNextPage" on="submit"}}>
+        <div style="text-align: center;padding: 0 7em 2em 0;">
+          {{input type="text" value=skills  placeholder='Skills' size="30" required='true'}}
+        </div>
+        <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
+      </form>
+
+
+    {{else}}
+      {{#if fourthPage}}
+
+
+        <h2 style="text-align: center; color: white">show off<\br> your stuff</h2>
+        <form {{action "saveUser" on="submit"}}>
+          <div style="text-align: center;padding: 0 7em 2em 0;">
+            {{input type="url" value=portfolio  placeholder='Portfolio Link' size="30"}}
+          </div>
+          <p><button style=";padding: 0 2em 1em 0;" type="button">Upload Profile Image</button></p>
+          <p><button style=";padding: 0 2em 1em 0;" type="submit">Sign In</button></p>
+        </form>
+
+
+      {{/if}}
+    {{/if}}
+  {{/if}}
+{{/if}}
