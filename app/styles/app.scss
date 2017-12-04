@@ -246,7 +246,7 @@ a:-webkit-any-link {
 
   .image-box {
     background-color: white;
-    height: 400px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,4 +305,29 @@ a:-webkit-any-link {
       }
     }
   }
+}
+
+.rc-anchor-normal-footer, .rc-anchor-alert {
+  visibility: hidden !important;
+}
+
+.mdl-form {
+  text-align: center;
+  padding-top: 200px;
+
+  .mdl-input, .mdl-textfield {
+    width: 300px;
+    border-bottom: none;
+    color: white;
+  }
+}
+
+.register {
+  text-align: center;
+  padding: 30px;
+  color: white;
+}
+
+.rc-anchor-alert {
+  visibility: hidden;
 }
