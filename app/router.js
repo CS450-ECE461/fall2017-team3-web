@@ -15,6 +15,7 @@ Router.map(function() {
   });
   this.route('calendar');
   this.route('new-user');
+  this.route('messages');
 });
 
 export default Router;
