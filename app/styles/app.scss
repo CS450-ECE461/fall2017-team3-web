@@ -10,9 +10,18 @@
 @import 'addons/ember-calendar/paint-core';
 @import 'addons/ember-calendar/main';
 
+.app-view {
+  height: calc(100vh - 60px);
+}
+
+.app-outlet {
+  height: 100%;
+  overflow-y: scroll;
+}
+
 html, body {
   font-family: Graphik;
-  background-color: #19161F;
+  background-color: #21172D;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -23,7 +32,7 @@ html, body {
   align-content: stretch;
 
   .search-icon {
-    color: #DD4340;
+    color: #EE4640;
     font-size: 40px;
     text-align: center;
   }
@@ -32,7 +41,7 @@ html, body {
 
 .search-result {
   font-weight: 200;
-  color: #E6E3DD;
+  color: #F5EAD5;
   padding: 10px;
   display: flex;
 
@@ -67,8 +76,6 @@ html, body {
     max-height: 36px;
     overflow: hidden;
   }
-
-
 }
 
 a:-webkit-any-link {
@@ -81,8 +88,8 @@ a:-webkit-any-link {
   padding: 7px;
 
   .search-text {
-    background-color: #19161F;
-    color: #DD4340;
+    background-color: #21172D;
+    color: #EE4640;
     font-size: 26px;
     font-weight: 500;
     border: none;
@@ -96,24 +103,126 @@ a:-webkit-any-link {
 }
 
 .x-toggle-component {
-  color: #E6E3DD;
+  color: #F5EAD5;
 
   .x-toggle-flat {
     background-color: transparent;
-    color: #E6E3DD;
+    color: #F5EAD5;
   }
 
   .x-toggle-material::before, .x-toggle:checked + label > .x-toggle-material.x-toggle-btn:before {
-    background: #DD4340;
+    background: #EE4640;
   }
 
   .x-toggle-material::after, .x-toggle:checked + label > .x-toggle-material.x-toggle-btn:after {
-    background-color: #E6E3DD;
+    background-color: #F5EAD5;
   }
 }
 
 .results {
-
   overflow-y: scroll;
 }
 
+.title-block {
+  background-color: #EE4640;
+  text-align: center;
+  color: #F5EAD5;
+  height: 400px;
+  font-weight: 600;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .user-name {
+    font-size: 22px;
+    line-height: 35px;
+  }
+
+  .user-skills {
+    font-weight: 400;
+  }
+
+  img {
+    border-radius: 50%;
+    border: solid #F5EAD5 3px;
+    height: 150px !important;
+    width: 150px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .user-stars {
+    margin: 10px;
+  }
+}
+
+.about-block {
+  background-color: white;
+  color: #21172D;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .user-greeting {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 35px;
+    margin-bottom: 15px;
+  }
+}
+
+.projects-list {
+  background-color: white;
+
+  .projects-title {
+    background-color: #21172D;
+    color: white;
+    height: 110px;
+    display: flex;
+    line-height: 110px;
+    font-size: 32px;
+    padding-left: 30px;
+    font-weight: 700;
+  }
+
+  .project-item {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    img {
+      border-radius: 5px;
+      border: solid #21172D 3px;
+      margin-bottom: 10px;
+    }
+
+    .project-name {
+      color: #21172D;
+      font-size: 16px;
+    }
+  }
+}
+
+.navbar {
+  background-color: #EE4640;
+  position: static;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+
+
+  .nav-link {
+    color: white;
+
+    .material-icons {
+      font-size: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.as-calendar {
+  height: 100%;
+}

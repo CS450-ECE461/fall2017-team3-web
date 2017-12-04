@@ -10,8 +10,8 @@ Router.map(function() {
   this.route('sign-in');
   this.route('profile');
   this.route('search', function() {
-    this.route('profile', { path: '/:user_id'});
-    this.route('project', { path: '/:project_id'});
+    this.route('profile', { path: 'user/:user_id'});
+    this.route('project', { path: 'project/:project_id'});
   });
   this.route('calendar');
   this.route('new-user');

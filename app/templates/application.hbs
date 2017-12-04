@@ -1,15 +1,20 @@
-{{outlet}}
+<div class="app-view">
+  <div class="app-outlet">
+    {{outlet}}
+  </div>
+  {{#unless isLoginOrRegisterRoute}}
+    <div class="navbar">
+      {{#link-to "search" class="nav-link"}}
+        <i class="material-icons">&#xE8B6;</i>
+      {{/link-to}}
+      {{#link-to "profile" class="nav-link"}}
+        <i class="material-icons">&#xE7FF;</i>
+      {{/link-to}}
 
-{{#unless isLoginOrRegisterRoute}}
-<div>
-  {{#link-to "search"}}
-    <li>Search</li>
-  {{/link-to}}
-  {{#link-to "profile"}}
-    <li>Profile</li>
-  {{/link-to}}
-  {{#link-to "calendar"}}
-    <li>Calendar</li>
-  {{/link-to}}
+      {{#link-to "calendar" class="nav-link"}}
+        <i class="material-icons">&#xE8DF;</i>
+      {{/link-to}}
+    </div>
+  {{/unless}}
 </div>
-{{/unless}}
+
