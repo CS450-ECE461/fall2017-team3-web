@@ -160,9 +160,8 @@ a:-webkit-any-link {
 .about-block {
   background-color: white;
   color: #21172D;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 30px;
+  font-size: 16px;
 
   .user-greeting {
     font-size: 32px;
@@ -225,4 +224,192 @@ a:-webkit-any-link {
 
 .as-calendar {
   height: 100%;
+}
+
+.signout-button {
+  color: #F5EAD5;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.project-profile {
+
+  .project-name {
+    color: white;
+    background-color: #21172D;
+    height: 140px;
+    font-weight: 700;
+    line-height: 140px;
+    font-size: 32px;
+    padding-left: 30px;
+  }
+
+  .image-box {
+    background-color: white;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .project-about-title {
+    background-color: #EE4640;
+    color: white;
+    font-size: 32px;
+    padding-left: 30px;
+    font-weight: 700;
+    height: 110px;
+    line-height: 110px;
+  }
+
+
+  .project-description {
+    background-color: white;
+    color: #21172D;
+    padding: 20px 30px;
+    font-size: 16px;
+  }
+
+  .collaborators-title {
+    background-color: #21172D;
+    color: white;
+    font-size: 32px;
+    padding-left: 30px;
+    font-weight: 700;
+    height: 110px;
+    line-height: 110px;
+  }
+
+  .collaborators-list {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: white;
+
+    .collaborator-item {
+      padding: 10px;
+
+      img {
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .collaborator-name {
+        color: #21172D;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.rc-anchor-normal-footer, .rc-anchor-alert {
+  visibility: hidden !important;
+}
+
+.mdl-form {
+  text-align: center;
+  padding-top: 200px;
+
+  .mdl-input, .mdl-textfield {
+    width: 300px;
+    border-bottom: none;
+    color: white;
+  }
+}
+
+.register {
+  text-align: center;
+  padding: 30px;
+  color: white;
+}
+
+.rc-anchor-alert {
+  visibility: hidden;
+}
+
+.new-user {
+  .title {
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 36px;
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  input {
+    -webkit-appearance: none;
+    background-color: #21172D;
+    border-color: #EE4640;
+    border-radius: 5px;
+    color: #EE4640;
+    height: 50px;
+    font-size: 18px;
+    text-indent: 8px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .text-area {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .ember-text-area {
+    background-color: #21172D;
+    border-color: #EE4640;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #EE4640;
+    width: 80%;
+    padding: 4px;
+  }
+
+  button {
+    background-color: #EE4640;
+    border: none;
+    color: white;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    padding: 0;
+    margin-top: 20px;
+    margin-left: calc(50% - 100px);
+  }
+
+  .char-count {
+    color: #EE4640;
+  }
+}
+
+.messenger {
+  display: flex;
+  flex-direction: column;
+
+  .message-header {
+    color: white;
+    height: 80px;
+    font-size: 32px;
+    line-height: 80px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .message-threads {
+    height: calc(100vh - 140px);
+    background-color: #F5EAD5;
+  }
+}
+
+.material-icons {
+  color: #F5EAD5;
 }
