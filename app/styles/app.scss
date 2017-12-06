@@ -413,3 +413,30 @@ a:-webkit-any-link {
 .material-icons {
   color: #F5EAD5;
 }
+
+#loading-icon {
+  font-size: 90px;
+  color: #F5EAD5;
+  align-self: center;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+#loading-screen {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

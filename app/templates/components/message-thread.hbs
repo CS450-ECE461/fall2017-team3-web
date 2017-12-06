@@ -1,22 +1,8 @@
 {{#link-to }}
-  <article class="search-result">
-
-    <img class="result-image" src="{{photo}}">
-
-    <div class="result-text-items">
-      <div class="result-name">
-        {{name}}
-      </div>
-
-      {{#if isUser}}
-        {{star-rating averageRating}}
-      {{else}}
-        <div class="result-description">
-          {{description}}
-        </div>
-      {{/if}}
+  <div class="thread-box" style="height:100px; background-color: red">
+    <img class="thread-image" src="{{recipient.photo}}">
+    <div class="thread-name">
+      {{recipient.name}}
     </div>
-
-  </article>
-
+  </div>
 {{/link-to}}
