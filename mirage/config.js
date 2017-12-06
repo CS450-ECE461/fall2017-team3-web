@@ -334,7 +334,11 @@ let searchById = function(item) {
   });
 
   this.get('/conversations', function(db, request) {
-    return { conversations: conversations.find((conversation) => request.params.id in conversation.participants)};
+    let filteredConversations = conversations.filter(function(i) {
+      return i.participants.toString().toLowerCase().indexOf(request.queryParams.id.toString().toLowerCase()) !== -1;
+    });
+
+    return { conversations: filteredConversations };
   });
 
   this.get('/users', function(db, request) {

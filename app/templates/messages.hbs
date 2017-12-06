@@ -3,6 +3,8 @@
     Messenger
   </div>
   <div class="message-threads">
-
+    {{#each model as |conversation|}}
+      {{conversation.participants}}
+    {{/each}}
   </div>
 </div>
