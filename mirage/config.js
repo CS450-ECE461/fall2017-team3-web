@@ -274,11 +274,11 @@ let searchById = function(item) {
 
   let projects = [{
     id: 'project_1',
-    name: 'Messaging App',
-    description: 'creating a messaging app to beat WhatsApp',
+    name: 'Collaboration App',
+    description: "Create an application to allow makers to connect with projects in their area." ,
     skills: ['web design', 'web development', 'software testing'],
     owner: 'Owner One',
-    active: true,
+    active: false,
     collaborators: ['user_five@example.com','user_one@example.com'],
     image: '/assets/images/project.png'
     }, {

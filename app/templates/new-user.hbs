@@ -1,21 +1,22 @@
+<div class="new-user">
 {{#if firstPage}}
 
 
-  <h2 style="text-align: center; color: white">who are you</h2>
+  <div class="title">WHO ARE YOU?</div>
   <form {{action "toNextPage" on="submit"}}>
-    <div style="text-align: center;padding: 0 7em 2em 0;">
+    <div class="text-area">
       {{input type="text" value=name  placeholder='Name' size="30" required='true'}}
     </div>
-    <div style="text-align: center;padding: 0 7em 2em 0;">
+    <div class="text-area">
       {{input type="email" value=email  placeholder='Email' size="30" required='true'}}
     </div>
-    <div style="text-align: center;padding: 0 7em 2em 0;">
+    <div class="text-area">
       {{input type="tel" value=phone  placeholder='Phone' size="30"}}
     </div>
-    <div style="text-align: center;padding: 0 7em 2em 0;">
+    <div class="text-area">
       {{input type="password" value=password  placeholder='Password' size="30" required='true'}}
     </div>
-    <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
+    <button type="submit">Continue</button>
   </form>
 
 
@@ -23,15 +24,15 @@
   {{#if secondPage}}
 
 
-    <h2 style="text-align: center; color: white">what do you do</h2>
+  <div class="title">WHAT DO YOU DO?</div>
     <form {{action "toNextPage" on="submit"}}>
-      <div style="text-align: center;padding: 0 7em 2em 0;">
+      <div class="text-area">
         {{textarea name="descriptionAera" value=description placeholder='Description' cols="40" rows="4" maxlength="150"}}
-        <div  style="color: white">
+        <div class="char-count">
           {{character-counter characterCount=this.description.length characterLimit=150 inputClass='descriptionAera'}}characters remaining
         </div>
       </div>
-      <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
+      <button  type="submit">Continue</button>
     </form>
 
 
@@ -39,12 +40,12 @@
     {{#if thirdPage}}
 
 
-      <h2 style="text-align: center; color: white">what's in <\br> your toolbag</h2>
+    <div class="title">WHAT'S IN <\br> YOUR TOOLBAG?</div>
       <form {{action "toNextPage" on="submit"}}>
-        <div style="text-align: center;padding: 0 7em 2em 0;">
+        <div class="text-area">
           {{input type="text" value=skills  placeholder='Skills' size="30" required='true'}}
         </div>
-        <p><button style=";padding: 0 2em 1em 0;" type="submit">Continue</button></p>
+        <button type="submit">Continue</button>
       </form>
 
 
@@ -52,13 +53,13 @@
       {{#if fourthPage}}
 
 
-        <h2 style="text-align: center; color: white">show off<\br> your stuff</h2>
+      <div class="title">SHOW OFF <\br> YOUR STUFF</div>
         <form {{action "saveUser" on="submit"}}>
-          <div style="text-align: center;padding: 0 7em 2em 0;">
+          <div class="text-area">
             {{input type="url" value=portfolio  placeholder='Portfolio Link' size="30"}}
           </div>
-          <p><button style=";padding: 0 2em 1em 0;" type="button">Upload Profile Image</button></p>
-          <p><button style=";padding: 0 2em 1em 0;" type="submit">Sign In</button></p>
+          <button type="button">Upload Profile Image</button>
+          <button type="submit">Sign In</button>
         </form>
 
 
@@ -66,3 +67,4 @@
     {{/if}}
   {{/if}}
 {{/if}}
+</div>
