@@ -22,14 +22,15 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      isAuthenticated: false
     },
 
       // This is the key for the optional Recaptcha associated with Gatekeeper
-    'ember-cli-google': {
+    /*'ember-cli-google': {
       recaptcha: {
-        siteKey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+        siteKey: '6LeOYjgUAAAAANY85SPKKE8QhXWBfzRFKk0KsFRe'
       }
-    },
+    },*/
 
     gatekeeper: {
       baseUrl: 'http://localhost:5000',
@@ -60,6 +61,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.isAuthenticated= false;
   }
 
   if (environment === 'production') {
