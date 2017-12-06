@@ -213,7 +213,8 @@ let searchById = function(item) {
     image: '/assets/images/profile.png',
     description: 'I am passionate about taking the perfect photograph and the best designs. Willing to participate in any project',
     portfolio: 'phylliskingsley.com',
-    projects: ['project_1','project_4']
+    projects: ['project_1','project_4'],
+    conversations: ["conversation_1"]
     }, {
     id: 'user_two@example.com',
     password: 'usertwo',
@@ -311,6 +312,15 @@ let searchById = function(item) {
   }
   ];
 
+  let conversations = [{
+    id: 'conversation_1',
+    participants: ["user_one@example.com", "user_two@example.com"],
+    messages: [["Hello!", "user_one@example.com"],
+               ["Hey there! What's up?", "user_two@example.com"],
+               ["I need help with my program.", "user_one@example.com"],
+               ["Alrighty. Let me know when you want to talk.", "user_two@example.com"]]
+  }];
+
 
   this.get('/projects', function(db, request) {
     if(request.queryParams.skills !== undefined) {
@@ -321,6 +331,10 @@ let searchById = function(item) {
     } else {
       return { projects : projects};
     }
+  });
+
+  this.get('/conversations', function(db, request) {
+    return { conversations: conversations.find((conversation) => request.params.id in conversation.participants)};
   });
 
   this.get('/users', function(db, request) {
