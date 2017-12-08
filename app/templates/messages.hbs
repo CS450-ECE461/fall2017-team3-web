@@ -3,5 +3,8 @@
     Messenger
   </div>
   <div class="message-threads">
+    {{#each conversations as |conversation|}}
+      {{message-thread}}
+    {{/each}}
   </div>
 </div>
