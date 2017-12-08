@@ -315,10 +315,14 @@ let searchById = function(item) {
   let conversations = [{
     id: 'conversation_1',
     participants: ["user_one@example.com", "user_two@example.com"],
-    messages: [["Hello!", "user_one@example.com"],
-               ["Hey there! What's up?", "user_two@example.com"],
-               ["I need help with my program.", "user_one@example.com"],
-               ["Alrighty. Let me know when you want to talk.", "user_two@example.com"]]
+    messages: [{"text": "Hello!",
+                "sender": "user_one@example.com"},
+                {"text": "Hey there! What's up?",
+                  "sender": "user_two@example.com"},
+                {"text": "I need help with my program.",
+                  "sender": "user_one@example.com"},
+                {"text": "Alrighty. Let me know when you want to talk.",
+                  "sender": "user_two@example.com"}]
   }];
 
 
