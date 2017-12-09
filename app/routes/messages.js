@@ -8,14 +8,17 @@ export default Gatekeeper.User.AuthenticatedRoute.extend ({
 
   setupController(controller, model) {
     controller.set('conversations', model);
-    controller.set('recipientUsers', []);
 
     let i;
     for (i = 0; i < controller.get('conversations').content.length; i++) {
       if (controller.get('conversations').objectAtContent(i).get('participants')[1] !== this.get('currentUser').get('email')) {
-        controller.get('conversations').objectAtContent(i)['otherUser'] = (this.get ('store').findRecord ('user', controller.get('conversations').objectAtContent(i).get('participants')[1]));
+        if (!controller.get('conversations').objectAtContent(i)['otherUser']) {
+          controller.get('conversations').objectAtContent(i)['otherUser'] = (this.get('store').findRecord('user', controller.get('conversations').objectAtContent(i).get('participants')[1]));
+        }
       } else {
-        controller.get('conversations').objectAtContent(i)['otherUser'] = (this.get ('store').findRecord ('user', controller.get('conversations').objectAtContent(i).get('participants')[0]));
+        if (!controller.get('conversations').objectAtContent(i)['otherUser']) {
+          controller.get('conversations').objectAtContent(i)['otherUser'] = (this.get('store').findRecord('user', controller.get('conversations').objectAtContent(i).get('participants')[0]));
+        }
       }
     }
   }
