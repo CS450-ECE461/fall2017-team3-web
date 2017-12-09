@@ -442,5 +442,21 @@ a:-webkit-any-link {
 }
 
 .thread-box {
+  display: flex;
+  align-content: center;
+  padding: 10px;
+  margin: 5px;
 
+  .thread-image {
+    height: 70px;
+    width: 70px;
+    border-radius: 7px;
+  }
+
+  .thread-name {
+    line-height: 70px;
+    padding-left: 15px;
+    color: black;
+    font-size: 22px;
+  }
 }
