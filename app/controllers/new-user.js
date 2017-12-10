@@ -1,28 +1,30 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend ({
   firstPage: true,
   secondPage: false,
   thirdPage: false,
   fourthPage: false,
 
   actions: {
-    toNextPage() {
-      if(this.get("firstPage")) {
-        this.set("firstPage", false);
-        this.set("secondPage", true);
-      } else if(this.get("secondPage")) {
-        this.set("secondPage", false);
-        this.set("thirdPage", true)
-      } else if(this.get("thirdPage")) {
-        this.set("thirdPage", false);
-        this.set("fourthPage", true)
+    toNextPage () {
+      if (this.get ("firstPage")) {
+        this.set ("firstPage", false);
+        this.set ("secondPage", true);
+
+      } else if (this.get ("secondPage")) {
+        this.set ("secondPage", false);
+        this.set ("thirdPage", true)
+
+      } else if (this.get ("thirdPage")) {
+        this.set ("thirdPage", false);
+        this.set ("fourthPage", true)
       }
     },
 
-    saveUser() {
-      let store = this.get('store');
-      store.createRecord('user', {
+    saveUser () {
+      let store = this.get ('store');
+      store.createRecord ('user', {
         id: this.email,
         name: this.name,
         rating: [5],

@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend ({
   arrowValue: "keyboard-arrow-down",
   toggleValue: false,
 
@@ -17,8 +17,8 @@ export default Ember.Controller.extend({
       if (this.get("arrowValue") == "keyboard-arrow-down") {
         this.set("arrowValue", "keyboard-arrow-up")
         this.set("showToggle", true);
-      }
-      else {
+
+      } else {
         this.set("arrowValue", "keyboard-arrow-down")
         this.set("showToggle", false);
       }
@@ -28,6 +28,7 @@ export default Ember.Controller.extend({
       this.toggleProperty("toggleValue");
       if (this.get("toggleValue")){
         var type = "project";
+        
       } else {
         type = "user";
       }
