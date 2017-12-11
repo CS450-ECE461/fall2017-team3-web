@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend ({
+  // List Filter component for user and project search
   className: ['list-filter'],
   value: '',
 
@@ -8,6 +9,7 @@ export default Ember.Component.extend({
     this._super(...arguments);
   },
 
+  // Filter by user input
   actions: {
     handleFilterEntry() {
       let filterInputValue = this.get('value');
@@ -15,6 +17,4 @@ export default Ember.Component.extend({
       filterAction(filterInputValue).then((filterResults) => this.set('results', filterResults));
     }
   }
-
 });
-
