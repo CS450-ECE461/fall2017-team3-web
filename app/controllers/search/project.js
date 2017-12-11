@@ -6,7 +6,6 @@ export default Ember.Controller.extend ({
     filterById (param){
       if (param !== '') {
         return this.get('store').findRecord('project', param.id);
-
       } else {
         return this.get('store').findRecord('project', {id: 'undefined'});
       }
