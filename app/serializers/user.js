@@ -1,11 +1,11 @@
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend ({
+  primaryKey: 'email',
   serialize() {
     let json = this._super(...arguments);
-    
+
     return {
-        id: json.id,
         name: json.name,
         rating: json.rating,
         skills: json.skills,

@@ -32,7 +32,7 @@ export default Ember.Controller.extend ({
       } else {
         type = "user";
       }
-      
+
       this.send("search", this.get("searchParam"), type);
     }
   }

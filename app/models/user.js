@@ -4,7 +4,7 @@ import { computed } from '@ember/object';
 export default DS.Model.extend ({
   name: DS.attr(),
   rating: DS.attr(),
-  
+
   averageRating: computed('rating', function() {
     let arr = this.get('rating');
     let sum = 0;
