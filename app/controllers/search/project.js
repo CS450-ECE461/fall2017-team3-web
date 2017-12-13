@@ -1,12 +1,13 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend ({
+  // project search filtering
   actions: {
-    filterById (param) {
+    filterById (param){
       if (param !== '') {
-        return this.get('store').findRecord('user', param.id);
+        return this.get('store').findRecord('project', param.id);
       } else {
-        return this.get ('store').findRecord ('user', {id: 'undefined'});
+        return this.get('store').findRecord('project', {id: 'undefined'});
       }
     }
   }
