@@ -11,14 +11,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{signout-button}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal();
 
-  // Template block usage:
-  this.render(hbs`
-    {{#signout-button}}
-      template block text
-    {{/signout-button}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });
