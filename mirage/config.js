@@ -213,7 +213,8 @@ let searchById = function(item) {
     image: '/assets/images/profile.png',
     description: 'I am passionate about taking the perfect photograph and the best designs. Willing to participate in any project',
     portfolio: 'phylliskingsley.com',
-    projects: ['project_1','project_4']
+    projects: ['project_1','project_4'],
+    conversations: ["conversation_1", "conversation_2"]
     }, {
     id: 'user_two@example.com',
     password: 'usertwo',
@@ -302,7 +303,7 @@ let searchById = function(item) {
     }, {
     id: 'project_4',
     name: 'Educational Web App',
-    description: 'To help Math students in our local school, I want to help create an educational app that provides sample problems and solution to common assignments',
+    description: 'To help Math students in our local school, I want to help create an educational app that provides sample problems and solutions to common assignments',
     skills: ['HTML', 'CSS', 'javascript','web development'],
     owner: 'Owner Four',
     active: true,
@@ -311,6 +312,27 @@ let searchById = function(item) {
   }
   ];
 
+  let conversations = [{
+    id: 'conversation_1',
+    participants: ["user_one@example.com", "user_two@example.com"],
+    messages: [{"text": "Hello!",
+                "sender": "user_one@example.com"},
+                {"text": "Hey there! What's up?",
+                  "sender": "user_two@example.com"},
+                {"text": "I need help with my program.",
+                  "sender": "user_one@example.com"},
+                {"text": "Alrighty. Let me know when you want to talk.",
+                  "sender": "user_two@example.com"}]
+  }, {id: 'conversation_2',
+    participants: ["user_one@example.com", "user_three@example.com"],
+    messages: [{"text": "Hello!",
+    "sender": "user_one@example.com"},
+    {"text": "Hey there! What's up?",
+      "sender": "user_two@example.com"},
+    {"text": "I need help with my program.",
+      "sender": "user_one@example.com"},
+    {"text": "Alrighty. Let me know when you want to talk.",
+      "sender": "user_two@example.com"}]}];
 
   this.get('/projects', function(db, request) {
     if(request.queryParams.skills !== undefined) {
@@ -321,6 +343,14 @@ let searchById = function(item) {
     } else {
       return { projects : projects};
     }
+  });
+
+  this.get('/conversations', function(db, request) {
+    let filteredConversations = conversations.filter(function(i) {
+      return i.participants.toString().toLowerCase().indexOf(request.queryParams.id.toString().toLowerCase()) !== -1;
+    });
+
+    return { conversations: filteredConversations };
   });
 
   this.get('/users', function(db, request) {
