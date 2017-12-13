@@ -1,5 +1,5 @@
-import Ember from 'ember';
+import Gatekeeper from 'ember-cli-gatekeeper';
 
-export default Ember.Route.extend ({
-  
+export default Gatekeeper.User.AuthenticatedRoute.extend ({
+
 });
